@@ -1,0 +1,482 @@
+{
+	"delete_all_user_history": [
+		"required|user_id|String|The id of the Plex user",
+		"optional|row_ids|String|Comma separated row ids to delete, e.g. '2,3,8'"
+	],
+	"delete_export": [
+		"required|export_id|Integer|The row id of the exported file to delete",
+		"optional|delete_all|Boolean|'true' to delete all exported files"
+	],
+	"delete_history": [
+		"required|row_ids|String|Comma separated row ids to delete, e.g. '65,110,2,3645'"
+	],
+	"delete_hosted_images": [
+		"optional|rating_key|Integer|1234 (Note: Must be the movie, show, season, artist, or album rating key)",
+		"optional|service|String|'imgur' or 'cloudinary'",
+		"optional|delete_all|Boolean|'true' to delete all images form the service"
+	],
+	"delete_library": [
+		"required|server_id|String|The Plex server identifier of the library section",
+		"required|section_id|String|The id of the Plex library section",
+		"optional|row_ids|String|Comma separated row ids to delete, e.g. '2,3,8'"
+	],
+	"delete_lookup_info": [
+		"optional|rating_key|Integer|1234 (Note: Must be the movie, show, artist, album, or track rating key)",
+		"optional|service|String|'themoviedb' or 'tvmaze' or 'musicbrainz'",
+		"optional|delete_all|Boolean|'true' to delete all images form the service"
+	],
+	"delete_media_info_cache": [
+		"required|section_id|String|The id of the Plex library section"
+	],
+	"delete_mobile_device": {
+		"required|OR": [
+			"mobile_device_id|Integer|The mobile device database id to delete",
+			"device_id|String|The unique device identifier for the mobile device"
+			]
+	},
+	"delete_newsletter": [
+		"required|newsletter_id|Integer|The newsletter to delete"
+	],
+	"delete_notifier": [
+		"required|notifier_id|Integer|The notifier to delete"
+	],
+	"delete_synced_item": [
+		"required|client_id|String|The client ID of the device to delete from",
+		"required|sync_id|String|The sync ID of the synced item"
+	],
+	"delete_user": [
+		"required|user_id|String|The id of the Plex user",
+		"optional|row_ids|String|Comma separated row ids to delete, e.g. '2,3,8'"
+	],
+	"download_export": [
+		"required|export_id|Integer|The row id of the exported file to download"
+	],
+	"download_log": [
+		"optional|logfile|String|The name of the Tautulli log file, 'tautulli', 'tautulli_api', 'plex_websocket'"
+	],
+	"download_plex_log": [
+		"optional|logfile|Integer|The name of the Plex log file, e.g. 'Plex Media Server', 'Plex Media Scanner'"
+	],
+	"edit_library": [
+		"required|section_id|String|The id of the Plex library section",
+		"required|custom_thumb|String|The URL for the custom library thumbnail",
+		"required|custom_art|String|The URL for the custom library background art",
+		"required|keep_history|Integer|0 or 1"
+	],
+	"edit_user": [
+		"required|user_id|String|The id of the Plex user friendly_name(str): The friendly name of the user",
+		"required|custom_thumb|String|The URL for the custom user thumbnail",
+		"required|keep_history|Integer|0 or 1",
+		"required|allow_guest|Integer|0 or 1"
+	],
+	"export_metadata": [
+		"required|OR": [
+			"section_id|Integer|The section id of the library items to export",
+			"user_id|Integer|The user id of the playlist items to export",
+		"required|rating_key|Integer|The rating key of the media item to export",
+		"optional|file_format|String|csv (default), json, xml, or m3u8",
+		"optional|metadata_level|Integer|The level of metadata to export (default 1)",
+		"optional|media_info_level|Integer|The level of media info to export (default 1)",
+		"optional|thumb_level|Integer|The level of poster/cover images to export (default 0)",
+		"optional|art_level|Integer|The level of background artwork images to export (default 0)",
+		"optional|custom_fields|String|Comma separated list of custom fields to export in addition to the export level selected",
+		"optional|export_type|String|'collection' or 'playlist' for library/user export, otherwise default to all library items",
+		"optional|individual_files|Boolean|Export each item as an individual file for library/user export.",
+	],
+	"get_activity": [
+		"optional|OR": [
+			"session_key|Integer|Session key for the session info to return",
+			"session_id|String|Session ID for the session info to return",
+	],
+	"get_apikey": [
+		"optional|username|String|Your Tautulli username",
+		"optional|password|String|Your Tautulli password",
+	],
+	"get_children_metadata": [
+		"required|rating_key|String|Rating key of the item",
+		"required|media_type|String|Media type of the item",
+	],
+	"get_collections_table": [
+		"required|section_id|String|The id of the Plex library section",
+	],
+	"get_export_fields": [
+		"required|media_type|String|The media type of the fields to return",
+		"optional|sub_media_type|String|The child media type for collections (movie, show, artist, album, photoalbum), or playlists (video, audio, photo)",
+	],
+	"get_exports_table": [
+		"required|OR": [
+			"section_id|String|The id of the Plex library section",
+			"user_id|String|The id of the Plex user",
+			"rating_key|String|The rating key of the exported item"
+		],
+		"optional|order_column|String|'added_at', 'sort_title', 'container', 'bitrate', 'video_codec', 'video_resolution', 'video_framerate', 'audio_codec', 'audio_channels', 'file_size', 'last_played', 'play_count'",
+		"optional|order_dir|String|'desc' or 'asc'",
+		"optional|start|Integer|Row to start from, 0",
+		"optional|length|Integer|Number of items to return, 25",
+		"optional|search|String|A string to search for, 'Thrones'"
+	],
+	"get_geoip_lookup": [
+		"required|ip_address|String|IP Address"
+	],
+	"get_history": [
+		"optional|grouping|Integer|0 or 1",
+		"optional|include_activity|Integer|0 or 1",
+		"optional|user|String|'Jon Snow'",
+		"optional|user_id|Integer|133788",
+		"optional|rating_key|Integer|4348",
+		"optional|parent_rating_key|Integer|544",
+		"optional|grandparent_rating_key|Integer|351",
+		"optional|start_date|String|History for the exact date, 'YYYY-MM-DD'",
+		"optional|before|String|History before and including the date, 'YYYY-MM-DD'",
+		"optional|after|String|History after and including the date, 'YYYY-MM-DD'",
+		"optional|section_id|Integer|2",
+		"optional|media_type|String|'movie', 'episode', 'track', 'live'",
+		"optional|transcode_decision|String|'direct play', 'copy', 'transcode',",
+		"optional|guid|String|Plex guid for an item, e.g. 'com.plexapp.agents.thetvdb://121361/6/1'",
+		"optional|order_column|String|'date', 'friendly_name', 'ip_address', 'platform', 'player', 'full_title', 'started', 'paused_counter', 'stopped', 'duration'",
+		"optional|order_dir|String|'desc' or 'asc'",
+		"optional|start|Integer|Row to start from, 0",
+		"optional|length|Integer|Number of items to return, 25",
+		"optional|search|String|A string to search for, 'Thrones'"
+	],
+	"get_home_stats": [
+		"optional|grouping|Integer|0 or 1",
+		"optional|time_range|Integer|The time range to calculate statistics, 30",
+		"optional|stats_type|String|'plays' or 'duration'",
+		"optional|stats_start|Integer|The row number of the stat item to start at, 0",
+		"optional|stats_count|Integer|The number of stat items to return, 5",
+		"optional|stat_id|String|A single stat to return, 'top_movies', 'popular_movies', 'top_tv', 'popular_tv', 'top_music', 'popular_music', 'top_libraries', 'top_users', 'top_platforms', 'last_watched', 'most_concurrent'",
+	],
+	"get_item_user_stats": [
+		"required|rating_key|String|Rating key of the item",
+		"optional|grouping|Integer|0 or 1",
+	],
+	"get_item_watch_time_stats": [
+		"required|rating_key|String|Rating key of the item",
+		"optional|grouping|Integer|0 or 1",
+		"optional|query_days|String|Comma separated days, e.g. '1,7,30,0'",
+	],
+	"get_libraries_table": [
+		"optional|grouping|Integer|0 or 1",
+		"optional|order_column|String|'library_thumb', 'section_name', 'section_type', 'count', 'parent_count', 'child_count', 'last_accessed', 'last_played', 'plays', 'duration'",
+		"optional|order_dir|String|'desc' or 'asc'",
+		"optional|start|Integer|Row to start from, 0",
+		"optional|length|Integer|Number of items to return, 25",
+		"optional|search|String|A string to search for, 'Movies'",
+	],
+	"get_library": [
+		"required|section_id|String|The id of the Plex library section",
+		"optional|include_last_accessed|Boolean|True to include the last_accessed value for the library.",
+	],
+	"get_library_media_info": [
+		"required|OR": [
+			"section_id|String|The id of the Plex library section",
+			"rating_key|String|The grandparent or parent rating key",
+		],
+		"optional|section_type|String|'movie', 'show', 'artist', 'photo'",
+		"optional|order_column|String|'added_at', 'sort_title', 'container', 'bitrate', 'video_codec', 'video_resolution', 'video_framerate', 'audio_codec', 'audio_channels', 'file_size', 'last_played', 'play_count'",
+		"optional|order_dir|String|'desc' or 'asc'",
+		"optional|start|Integer|Row to start from, 0",
+		"optional|length|Integer|Number of items to return, 25",
+		"optional|search|String|A string to search for, 'Thrones'",
+		"optional|refresh|String|'true' to refresh the media info table",
+	],
+	"get_library_user_stats": [
+		"required|section_id|String|The id of the Plex library section",
+		"optional|grouping|Integer|0 or 1",
+	],
+	"get_library_watch_time_stats": [
+		"required|section_id|String|The id of the Plex library section",
+		"optional|grouping|Integer|0 or 1",
+		"optional|query_days|String|Comma separated days, e.g. '1,7,30,0'",
+	],
+	"get_logs": [
+		"optional|sort|String|'time', 'thread', 'msg', 'loglevel'",
+		"optional|search|String|A string to search for",
+		"optional|order|String|'desc' or 'asc'",
+		"optional|regex|String|A regex string to search for",
+		"optional|start|Integer|Row number to start from",
+		"optional|end|Integer|Row number to end at",
+	],
+	"get_metadata": [
+		"required|OR": [
+			"rating_key|String|Rating key of the item",
+			"sync_id|String|Sync ID of a synced item",
+		]
+	],
+	"get_new_rating_keys": [
+		"required|rating_key|String|'12345'",
+		"required|media_type|String|'movie', 'show', 'season', 'episode', 'artist', 'album', 'track'",
+	],
+	"get_newsletter_config": [
+		"required|newsletter_id|Integer|The newsletter config to retrieve",
+	],
+	"get_newsletter_log": [
+		"optional|order_column|String|'timestamp', 'newsletter_id', 'agent_name', 'notify_action', 'subject_text', 'start_date', 'end_date', 'uuid'",
+		"optional|order_dir|String|'desc' or 'asc'",
+		"optional|start|Integer|Row to start from, 0",
+		"optional|length|Integer|Number of items to return, 25",
+		"optional|search|String|A string to search for, 'Telegram'",
+	],
+	"get_notification_log": [
+		"optional|order_column|String|'timestamp', 'notifier_id', 'agent_name', 'notify_action', 'subject_text', 'body_text',",
+		"optional|order_dir|String|'desc' or 'asc'",
+		"optional|start|Integer|Row to start from, 0",
+		"optional|length|Integer|Number of items to return, 25",
+		"optional|search|String|A string to search for, 'Telegram'",
+	],
+	"get_notifier_config": [
+		"required|notifier_id|Integer|The notifier config to retrieve",
+	],
+	"get_notifiers": [
+		"optional|notify_action|String|The notification action to filter out",
+	],
+	"get_old_rating_keys": [
+		"required|rating_key|String|'12345'",
+		"required|media_type|String|'movie', 'show', 'season', 'episode', 'artist', 'album', 'track'",
+	],
+	"get_playlists_table": [
+		"optional|OR": [
+			"section_id|String|The section id of the Plex library",
+			"user_id|String|The user id of the Plex user",
+		]
+	],
+	"get_plays_by_date": [
+		"optional|time_range|String|The number of days of data to return",
+		"optional|y_axis|String|'plays' or 'duration'",
+		"optional|user_id|String|The user id to filter the data",
+		"optional|grouping|Integer|0 or 1",
+	],
+	"get_plays_by_dayofweek": [
+		"optional|time_range|String|The number of days of data to return",
+		"optional|y_axis|String|'plays' or 'duration'",
+		"optional|user_id|String|The user id to filter the data",
+		"optional|grouping|Integer|0 or 1",
+	],
+	"get_plays_by_hourofday": [
+		"optional|time_range|String|The number of days of data to return",
+		"optional|y_axis|String|'plays' or 'duration'",
+		"optional|user_id|String|The user id to filter the data",
+		"optional|grouping|Integer|0 or 1",
+	],
+	"get_plays_by_source_resolution": [
+		"optional|time_range|String|The number of days of data to return",
+		"optional|y_axis|String|'plays' or 'duration'",
+		"optional|user_id|String|The user id to filter the data",
+		"optional|grouping|Integer|0 or 1",
+	],
+	"get_plays_by_stream_resolution": [
+		"optional|time_range|String|The number of days of data to return",
+		"optional|y_axis|String|'plays' or 'duration'",
+		"optional|user_id|String|The user id to filter the data",
+		"optional|grouping|Integer|0 or 1",
+	],
+	"get_plays_by_stream_type": [
+		"optional|time_range|String|The number of days of data to return",
+		"optional|y_axis|String|'plays' or 'duration'",
+		"optional|user_id|String|The user id to filter the data",
+		"optional|grouping|Integer|0 or 1",
+	],
+	"get_plays_by_top_10_platforms": [
+		"optional|time_range|String|The number of days of data to return",
+		"optional|y_axis|String|'plays' or 'duration'",
+		"optional|user_id|String|The user id to filter the data",
+		"optional|grouping|Integer|0 or 1",
+	],
+	"get_plays_by_top_10_users": [
+		"optional|time_range|String|The number of days of data to return",
+		"optional|y_axis|String|'plays' or 'duration'",
+		"optional|user_id|String|The user id to filter the data",
+		"optional|grouping|Integer|0 or 1",
+	],
+	"get_plays_per_month": [
+		"optional|time_range|String|The number of months of data to return",
+		"optional|y_axis|String|'plays' or 'duration'",
+		"optional|user_id|String|The user id to filter the data",
+		"optional|grouping|Integer|0 or 1",
+	],
+	"get_plex_log": [
+		"optional|window|Integer|The number of tail lines to return",
+		"optional|logfile|Integer|The name of the Plex log file, e.g. 'Plex Media Server', 'Plex Media Scanner'",
+	],
+	"get_recently_added": [
+		"required|count|String|Number of items to return",
+		"optional|start|String|The item number to start at",
+		"optional|media_type|String|The media type: movie, show, artist",
+		"optional|section_id|String|The id of the Plex library section",
+	],
+	"get_server_id": [
+		"required|hostname|String|'localhost' or '192.160.0.10'",
+		"required|port|Integer|32400",
+		"optional|ssl|Integer|0 or 1",
+		"optional|remote|Integer|0 or 1",
+	],
+	"get_server_pref": [
+		"required|pref|String|Name of preference",
+	],
+	"get_settings": [
+		"optional|key|String|Name of a config section to return",
+	],
+	"get_stream_data": [
+		"required|OR": [
+			"row_id|Integer|The row ID number for the history item",
+			"session_key|Integer|The session key of the current stream",
+		]
+	],
+	"get_stream_type_by_top_10_platforms": [
+		"optional|time_range|String|The number of days of data to return",
+		"optional|y_axis|String|'plays' or 'duration'",
+		"optional|user_id|String|The user id to filter the data",
+		"optional|grouping|Integer|0 or 1",
+	],
+	"get_stream_type_by_top_10_users": [
+		"optional|time_range|String|The number of days of data to return",
+		"optional|y_axis|String|'plays' or 'duration'",
+		"optional|user_id|String|The user id to filter the data",
+		"optional|grouping|Integer|0 or 1",
+	],
+	"get_synced_items": [
+		"optional|machine_id|String|The PMS identifier",
+		"optional|user_id|String|The id of the Plex user",
+	],
+	"get_user": [
+		"required|user_id|String|The id of the Plex user",
+		"optional|include_last_seen|Boolean|True to include the last_seen value for the user.",
+	],
+	"get_user_ips": [
+		"required|user_id|String|The id of the Plex user",
+		"optional|order_column|String|'last_seen', 'first_seen', 'ip_address', 'platform', 'player', 'last_played', 'play_count'",
+		"optional|order_dir|String|'desc' or 'asc'",
+		"optional|start|Integer|Row to start from, 0",
+		"optional|length|Integer|Number of items to return, 25",
+		"optional|search|String|A string to search for, 'xxx.xxx.xxx.xxx'",
+	],
+	"get_user_logins": [
+		"required|user_id|String|The id of the Plex user",
+		"optional|order_column|String|'date', 'time', 'ip_address', 'host', 'os', 'browser'",
+		"optional|order_dir|String|'desc' or 'asc'",
+		"optional|start|Integer|Row to start from, 0",
+		"optional|length|Integer|Number of items to return, 25",
+		"optional|search|String|A string to search for, 'xxx.xxx.xxx.xxx'",
+	],
+	"get_user_player_stats": [
+		"required|user_id|String|The id of the Plex user",
+		"optional|grouping|Integer|0 or 1",
+	],
+	"get_user_watch_time_stats": [
+		"required|user_id|String|The id of the Plex user",
+		"optional|grouping|Integer|0 or 1",
+		"optional|query_days|String|Comma separated days, e.g. '1,7,30,0'",
+	],
+	"get_users_table": [
+		"optional|grouping|Integer|0 or 1",
+		"optional|order_column|String|'user_thumb', 'friendly_name', 'last_seen', 'ip_address', 'platform', 'player', 'last_played', 'plays', 'duration'",
+		"optional|order_dir|String|'desc' or 'asc'",
+		"optional|start|Integer|Row to start from, 0",
+		"optional|length|Integer|Number of items to return, 25",
+		"optional|search|String|A string to search for, 'Jon Snow'",
+	],
+	"get_whois_lookup": [
+		"required|ip_address|String|IP Address",
+	],
+	"import_config": [
+		"required|OR": [
+			"config_file|file|The config file to import (multipart/form-data)",
+			"config_path|String|The full path to the config file to import",
+		],
+		"optional|backup|Boolean|true or false whether to backup the current config before importing",
+	],
+	"import_database": [
+		"required|OR": [
+			"database_file|file|The database file to import (multipart/form-data)",
+			"database_path|String|The full path to the database file to import",
+		],
+		"required|app|String|'tautulli' or 'plexwatch' or 'plexivity'",
+		"required|method|String|For Tautulli only, 'merge' or 'overwrite'",
+		"required|table_name|String|For PlexWatch or Plexivity only, 'processed' or 'grouped'",
+		"optional|backup|Boolean|For Tautulli only, true or false whether to backup the current database before importing",
+		"optional|import_ignore_interval|Integer|For PlexWatch or Plexivity only, the minimum number of seconds for a stream to import",
+	],
+	"logout_user_session": [
+		"required|row_ids|String|Comma separated row ids to sign out, e.g. '2,3,8'",
+	],
+	"notify": [
+		"required|notifier_id|Integer|The ID number of the notification agent",
+		"required|subject|String|The subject of the message",
+		"required|body|String|The body of the message",
+		"optional|headers|String|The JSON headers for webhook notifications",
+		"optional|script_args|String|The arguments for script notifications",
+	],
+	"notify_newsletter": [
+		"required|newsletter_id|Integer|The ID number of the newsletter agent",
+		"optional|subject|String|The subject of the newsletter",
+		"optional|body|String|The body of the newsletter",
+		"optional|message|String|The message of the newsletter",
+	],
+	"notify_recently_added": [
+		"required|rating_key|Integer|The rating key for the media",
+		"optional|notifier_id|Integer|The ID number of the notification agent. The notification will send to all enabled notification agents if notifier id is not provided.",
+	],
+	"pms_image_proxy": [
+		"required|img|String|/library/metadata/153037/thumb/1462175060 or",
+		"required|rating_key|String|54321",
+		"optional|width|String|300",
+		"optional|height|String|450",
+		"optional|opacity|String|25",
+		"optional|background|String|Hex color, e.g. 282828",
+		"optional|blur|String|3",
+		"optional|img_format|String|png",
+		"optional|fallback|String|'poster', 'cover', 'art', 'poster-live', 'art-live', 'art-live-full', 'user'",
+		"optional|refresh|Boolean|True or False whether to refresh the image cache",
+		"optional|return_hash|Boolean|True or False to return the self-hosted image hash instead of the image",
+	],
+	"register_device": [
+		"required|device_id|String|The unique device identifier for the mobile device",
+		"required|device_name|String|The device name of the mobile device",
+		"optional|platform|String|The platform of the mobile devices",
+		"optional|version|String|The version of the app",
+		"optional|friendly_name|String|A friendly name to identify the mobile device",
+		"optional|onesignal_id|String|The OneSignal id for the mobile device",
+		"optional|min_version|String|The minimum Tautulli version supported by the mobile device, e.g. v2.5.6",
+	],
+	"search": [
+		"required|query|String|The query string to search for",
+		"optional|limit|Integer|The maximum number of items to return per media type",
+	],
+	"set_mobile_device_config": [
+		"required|mobile_device_id|Integer|The mobile device config to update",
+		"optional|friendly_name|String|A friendly name to identify the mobile device",
+	],
+	"set_newsletter_config": [
+		"required|newsletter_id|Integer|The newsletter config to update",
+		"required|agent_id|Integer|The newsletter type of the newsletter",
+	],
+	"set_notifier_config": [
+		"required|notifier_id|Integer|The notifier config to update",
+		"required|agent_id|Integer|The agent of the notifier",
+		"optional|notify_actions|Integer|0 or 1, e.g. on_play, on_stop, etc.",
+		"optional|notify_text|String|e.g. on_play_subject, on_play_body, etc.",
+	],
+	"terminate_session": [
+		"required|OR": [
+			"session_key|Integer|The session key of the session to terminate",
+			"session_id|String|The session id of the session to terminate",
+		],
+		"optional|message|String|A custom message to send to the client",
+	],
+	"undelete_library": [
+		"required|section_id|String|The id of the Plex library section",
+		"required|section_name|String|The name of the Plex library section",
+	],
+	"undelete_user": [
+		"required|user_id|String|The id of the Plex user",
+		"required|username|String|The username of the Plex user",
+	],
+	"update_metadata_details": [
+		"required|old_rating_key|String|12345",
+		"required|new_rating_key|String|54321",
+		"required|media_type|String|'movie', 'show', 'season', 'episode', 'artist', 'album', 'track'",
+	],
+	"status": [
+		"optional|check|String|database", ]
+}

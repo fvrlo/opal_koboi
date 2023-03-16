@@ -1,0 +1,43 @@
+openapi: 3.1.0
+info:
+  title: Tautulli API
+  description: >
+    An OpenAPI implementation of the Tautulli API.
+    Since the API is not in that standard and I prefer low-code services like N8N, I figured an implementation would be considered useful.
+    Don't trouble the Tautulli team with issues if using this, it's most likely my fault.
+    Up to date with Tautulli v2.11.1 (3c996f0), with the last API revision being from v2.10.3 (87a0a14)
+  version: 2.11.1
+  externalDocs:
+    description: Official Tautulli API Documentation
+    url: https://github.com/Tautulli/Tautulli/wiki/Tautulli-API-Reference
+  contact:
+    name: Matt
+    url: https://twitter.com/fvrlo
+  license:
+    name: GNU GPLv3
+    identifier: GPL-3.0
+    url: https://www.gnu.org/licenses/gpl-3.0.txt
+
+servers:
+  - url: http://{ip}:{port}/api/v2
+    description: Location of **Tautulli** server
+    variables:
+      ip:
+        default: localhost
+        description: Server IP or hostname
+      port:
+        default: '8181'
+        description: Tautulli operating port
+
+components:
+  schemas:
+  responses:
+  parameters:
+  examples:
+  requestBodies:
+  headers:
+  securitySchemes:
+  links:
+  callbacks:
+  pathItems:
+
