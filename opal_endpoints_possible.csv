@@ -1,0 +1,124 @@
+Tautulli API Command;Theoretical Endpoint;Method?;Description
+delete_cache;/Cache;DELETE;Delete and recreate the cache directory.
+backup_config;/Configuration;POST;Create a manual backup of the 'config.ini' file.
+download_config;/Configuration;GET;Download the Tautulli configuration file.
+get_settings;/Configuration;GET;Gets all settings from the config file.
+import_config;/Configuration/Import;POST;Import a Tautulli config file.
+backup_db;/Database;POST;Create a manual backup of the 'plexpy.db' file.
+download_database;/Database;GET;Download the Tautulli database file.
+import_database;/Database/Import;POST;Import a Tautulli, PlexWatch, or Plexivity database into Tautulli.
+pms_image_proxy;/Images;GET;Gets an image from the PMS and saves it to the image cache directory.
+delete_image_cache;/Images;DELETE;Delete and recreate the image cache directory.
+get_servers_info;/Plex/Info;GET;Get info about the PMS.
+get_server_friendly_name;/Plex/Info/Friendly Name;GET;Get the name of the PMS.
+get_server_id;/Plex/Info/ID;GET;Get the PMS server identifier.
+get_server_identity;/Plex/Info/Identity;GET;Get info about the local server.
+get_server_list;/Plex/Info/List;GET;Get all your servers that are published to Plex.tv.
+get_server_pref;/Plex/Info/Preference Value;GET;Get a specified PMS server preference.
+get_server_info;/Plex/Info/Server;GET;Get the PMS server information.
+get_pms_update;/Plex/Update;GET;Check for updates to the Plex Media Server.
+status;/Tautulli;GET;Get the current status of Tautulli.
+delete_lookup_info;/Tautulli/3rd/API;DELETE;Delete the 3rd party API lookup info.
+delete_hosted_images;/Tautulli/3rd/Images;DELETE;Delete the images uploaded to image hosting services.
+get_activity;/Tautulli/Activity;GET;Get the current activity on the PMS.
+get_apikey;/Tautulli/API;GET;Get the apikey. Username and password are required if auth is enabled. Makes and saves the apikey if it does not exist.
+get_collections_table;/Tautulli/Collections;GET;Get the data on the Tautulli collections tables.
+server_status;/Tautulli/Connection Status;GET;Get the current status of Tautulli's connection to the Plex server.
+docs;/Tautulli/Docs_JSON;GET;Return the api docs as a dict where commands are keys, docstring are value.
+docs_md;/Tautulli/Docs_Markdown;GET;Return the api docs formatted with markdown.
+delete_export;/Tautulli/Exports;DELETE;Delete exports from Tautulli.
+download_export;/Tautulli/Exports;GET;Download an exported metadata file
+get_export_fields;/Tautulli/Exports/Fields;GET;Get a list of available custom export fields.
+get_exports_table;/Tautulli/Exports/Table;GET;Get the data on the Tautulli export tables.
+arnold;/Tautulli/Fun;GET;Get to the chopper!
+delete_history;/Tautulli/History;DELETE;Delete history rows from Tautulli.
+get_history;/Tautulli/History;GET;Get the Tautulli history.
+delete_all_library_history;/Tautulli/History/Library;DELETE;Delete all Tautulli history for a specific library.
+delete_recently_added;/Tautulli/History/Recently Added;DELETE;Flush out all of the recently added items in the database.
+delete_all_user_history;/Tautulli/History/User;DELETE;Delete all Tautulli history for a specific user.
+get_tautulli_info;/Tautulli/Info;GET;Get info about the Tautulli server.
+delete_library;/Tautulli/Library;DELETE;Delete a library section from Tautulli. Also erases all history for the library.
+edit_library;/Tautulli/Library;PUT;Update a library section on Tautulli.
+get_library;/Tautulli/Library;GET;Get a library's details.
+get_libraries;/Tautulli/Library/List;GET;Get a list of all libraries on your server.
+delete_media_info_cache;/Tautulli/Library/MediaInfo;DELETE;Delete the media info table cache for a specific library.
+get_library_media_info;/Tautulli/Library/MediaInfo;GET;Get the data on the Tautulli media info tables.
+get_library_names;/Tautulli/Library/Names;GET;Get a list of library sections and ids on the PMS.
+refresh_libraries_list;/Tautulli/Library/Refresh;GET;Refresh the Tautulli libraries list.
+get_libraries_table;/Tautulli/Library/Table;GET;Get the data on the Tautulli libraries table.
+get_logs;/Tautulli/Logs;GET;Get the Tautulli logs.
+delete_login_log;/Tautulli/Logs/Login;DELETE;Delete the Tautulli login logs.
+delete_newsletter_log;/Tautulli/Logs/Newsletter;DELETE;Delete the Tautulli newsletter logs.
+get_newsletter_log;/Tautulli/Logs/Newsletter;GET;Get the data on the Tautulli newsletter logs table.
+delete_notification_log;/Tautulli/Logs/Notification;DELETE;Delete the Tautulli notification logs.
+get_notification_log;/Tautulli/Logs/Notifications;GET;Get the data on the Tautulli notification logs table.
+download_plex_log;/Tautulli/Logs/Plex/Download;GET;Download the Plex log file.
+get_plex_log;/Tautulli/Logs/Plex/Get;GET;Get the PMS logs.
+download_log;/Tautulli/Logs/Tautulli;GET;Download the Tautulli log file.
+update_metadata_details;/Tautulli/Metadata;PUT;Update metadata (including parents/children) in Tautulli by matching rating keys.
+export_metadata;/Tautulli/Metadata;GET;Export library or media metadata to a file
+get_metadata;/Tautulli/Metadata/Media Item;GET;Get the metadata for a media item.
+get_children_metadata;/Tautulli/Metadata/Media Item/Children;GET;Get the metadata for the children of a media item.
+get_new_rating_keys;/Tautulli/Metadata/Media Item/Children/NewKeys;GET;Get a list of new rating keys for the PMS of all of the item's parent/children.
+get_old_rating_keys;/Tautulli/Metadata/Media Item/Children/OldKeys;GET;Get a list of old rating keys from the Tautulli database for all of the item's parent/children.
+delete_mobile_device;/Tautulli/Mobile;DELETE;Remove a mobile device from the database.
+set_mobile_device_config;/Tautulli/Mobile;PUT;Configure an existing notification agent.
+register_device;/Tautulli/Mobile;POST;Registers the Tautulli Remote App.
+delete_newsletter;/Tautulli/Notifications/Newsletter;DELETE;Remove a newsletter from the database.
+notify_newsletter;/Tautulli/Notifications/Newsletter;POST;Send a newsletter using Tautulli.
+set_newsletter_config;/Tautulli/Notifications/Newsletter;PUT;Configure an existing newsletter agent.
+get_newsletters;/Tautulli/Notifications/Newsletter;GET;Get a list of configured newsletters.
+add_newsletter_config;/Tautulli/Notifications/Newsletter/Config;POST;Add a new notification agent.
+get_newsletter_config;/Tautulli/Notifications/Newsletter/Config;GET;Get the configuration for an existing notification agent.
+delete_notifier;/Tautulli/Notifications/Notifier;DELETE;Remove a notifier from the database.
+notify;/Tautulli/Notifications/Notifier;POST;Send a notification using Tautulli.
+set_notifier_config;/Tautulli/Notifications/Notifier;PUT;Configure an existing notification agent.
+get_notifiers;/Tautulli/Notifications/Notifier;GET;Get a list of configured notifiers.
+add_notifier_config;/Tautulli/Notifications/Notifier/Config;POST;Add a new notification agent.
+get_notifier_config;/Tautulli/Notifications/Notifier/Config;GET;Get the configuration for an existing notification agent.
+get_notifier_parameters;/Tautulli/Notifications/Notifier/Parameters;GET;Get the list of available notification parameters.
+notify_recently_added;/Tautulli/Notifications/Recently Added;POST;Send a recently added notification using Tautulli.
+get_playlists_table;/Tautulli/Playlists/Table;GET;Get the data on the Tautulli playlists tables.
+restart;/Tautulli/Restart;POST;Restart Tautulli.
+undelete_library;/Tautulli/Restore/Library;POST;Restore a deleted library section to Tautulli.
+undelete_user;/Tautulli/Restore/User;POST;Restore a deleted user to Tautulli.
+search;/Tautulli/Search;GET;Get search results from the PMS.
+logout_user_session;/Tautulli/Session/Logout;POST;Logout Tautulli user sessions.
+terminate_session;/Tautulli/Session/Stop;POST;Stop a streaming session.
+get_item_watch_time_stats;/Tautulli/Stats;GET;Get the watch time stats for the media item.
+get_home_stats;/Tautulli/Stats/HomepageWatch;GET;Get the homepage watch statistics.
+get_library_user_stats;/Tautulli/Stats/Library/User;GET;Get a library's user statistics.
+get_library_watch_time_stats;/Tautulli/Stats/Library/Watch Time;GET;Get a library's watch time statistics.
+get_plays_by_date;/Tautulli/Stats/Plays/Date;GET;Get graph data by date.
+get_plays_by_dayofweek;/Tautulli/Stats/Plays/Days Of Week;GET;Get graph data by day of the week.
+get_plays_by_hourofday;/Tautulli/Stats/Plays/Hour of Day;GET;Get graph data by hour of the day.
+get_plays_per_month;/Tautulli/Stats/Plays/Month;GET;Get graph data by month.
+get_plays_by_source_resolution;/Tautulli/Stats/Plays/SourceRes;GET;Get graph data by source resolution.
+get_plays_by_stream_type;/Tautulli/Stats/Plays/Stream Type;GET;Get graph data by stream type by date.
+get_plays_by_stream_resolution;/Tautulli/Stats/Plays/StreamRes;GET;Get graph data by stream resolution.
+get_plays_by_top_10_platforms;/Tautulli/Stats/Plays/Top 10 Platforms;GET;Get graph data by top 10 platforms.
+get_plays_by_top_10_users;/Tautulli/Stats/Plays/Top 10 Users;GET;Get graph data by top 10 users.
+get_recently_added;/Tautulli/Stats/RecentlyAdded;GET;Get all items that where recently added to plex.
+get_stream_type_by_top_10_platforms;/Tautulli/Stats/StreamType/Top 10 Platforms;GET;Get graph data by stream type by top 10 platforms.
+get_stream_type_by_top_10_users;/Tautulli/Stats/StreamType/Top 10 Users;GET;Get graph data by stream type by top 10 users.
+get_user_watch_time_stats;/Tautulli/Stats/User;GET;Get a user's watch time statistics.
+get_item_user_stats;/Tautulli/Stats/User/Item;GET;Get the user stats for the media item.
+get_user_player_stats;/Tautulli/Stats/User/Player;GET;Get a user's player statistics.
+get_stream_data;/Tautulli/Stream;GET;Get the stream details from history or current stream.
+delete_synced_item;/Tautulli/Sync;DELETE;Delete a synced item from a device.
+get_synced_items;/Tautulli/Sync;GET;Get a list of synced items on the PMS.
+get_date_formats;/Tautulli/Time Format;GET;Get the date and time formats used by Tautulli.
+update;/Tautulli/Update;POST;Update Tautulli.
+update_check;/Tautulli/Update;GET;Check for Tautulli updates.
+delete_temp_sessions;/TempSession;DELETE;Flush out all of the temporary sessions in the database.
+delete_user;/User;DELETE;Delete a user from Tautulli. Also erases all history for the user.
+edit_user;/User;POST;Update a user on Tautulli.
+get_user;/User;GET;Get a user's details.
+get_user_ips;/User/IP;GET;Get the data on Tautulli users IP table.
+get_geoip_lookup;/User/IP Lookup;GET;Get the geolocation info for an IP address.
+get_whois_lookup;/User/IP Lookup/whois;GET;Get the connection info for an IP address.
+get_users;/User/List;GET;Get a list of all users that have access to your server.
+refresh_users_list;/User/List/Refresh;GET;Refresh the Tautulli users list.
+get_user_logins;/User/Logins;GET;Get the data on Tautulli user login table.
+get_user_names;/User/Names;GET;Get a list of all user and user ids.
+get_users_table;/User/Table;GET;Get the data on Tautulli users table.
