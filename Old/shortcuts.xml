@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<NotepadPlus>
+    <InternalCommands />
+    <Macros>
+        <Macro name="Tautulli" Ctrl="no" Alt="no" Shift="no" Key="0">
+            <!--1. Return Newline to just Newline-->
+			<Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1601" wParam="0" lParam="0" sParam="\r\n" />
+            <Action type="3" message="1625" wParam="0" lParam="1" sParam="" />
+            <Action type="3" message="1602" wParam="0" lParam="0" sParam="\n" />
+            <Action type="3" message="1702" wParam="0" lParam="770" sParam="" />
+            <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+        	<!--2. Quad Space to Tab-->
+            <Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1601" wParam="0" lParam="0" sParam="    " />
+            <Action type="3" message="1625" wParam="0" lParam="1" sParam="" />
+            <Action type="3" message="1602" wParam="0" lParam="0" sParam="\t" />
+            <Action type="3" message="1702" wParam="0" lParam="770" sParam="" />
+            <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+        	<!--3. Spellcheck-->
+				<!--3.1 Parameters-->
+            <Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1601" wParam="0" lParam="0" sParam="paramters" />
+            <Action type="3" message="1625" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1602" wParam="0" lParam="0" sParam="parameters" />
+            <Action type="3" message="1702" wParam="0" lParam="770" sParam="" />
+            <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+				<!--3.2 Boolean (temp)-->
+            <Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1601" wParam="0" lParam="0" sParam="(bool)" />
+            <Action type="3" message="1625" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1602" wParam="0" lParam="0" sParam="(bol)" />
+            <Action type="3" message="1702" wParam="0" lParam="770" sParam="" />
+            <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+				<!--3.3 Integer-->
+            <Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1601" wParam="0" lParam="0" sParam="(int) " />
+            <Action type="3" message="1625" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1602" wParam="0" lParam="0" sParam="(int): " />
+            <Action type="3" message="1702" wParam="0" lParam="770" sParam="" />
+            <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+				<!--3.4 Notify-->
+            <Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1601" wParam="0" lParam="0" sParam="Notify " />
+            <Action type="3" message="1625" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1602" wParam="0" lParam="0" sParam="notify_" />
+            <Action type="3" message="1702" wParam="0" lParam="770" sParam="" />
+            <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+				<!--3.5 Escaped quote to apostrophe-->
+			<Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1601" wParam="0" lParam="0" sParam='\&quot;' />
+            <Action type="3" message="1625" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1602" wParam="0" lParam="0" sParam='&apos;' />
+            <Action type="3" message="1702" wParam="0" lParam="770" sParam="" />
+            <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+        	<!--4. Tautulli-->
+            <Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1601" wParam="0" lParam="0" sParam='&quot;:&quot;' />
+            <Action type="3" message="1625" wParam="0" lParam="1" sParam="" />
+            <Action type="3" message="1602" wParam="0" lParam="0" sParam='&quot;: {\n\t\t\t\t&quot;description&quot;: &quot;' />
+            <Action type="3" message="1702" wParam="0" lParam="770" sParam="" />
+            <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+            <Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1601" wParam="0" lParam="0" sParam=" ``` Required parameters: " />
+            <Action type="3" message="1625" wParam="0" lParam="1" sParam="" />
+            <Action type="3" message="1602" wParam="0" lParam="0" sParam='&quot;\n\t\t\t\t&quot;required&quot;: [\n\t\t\t\t\t&quot;' />
+            <Action type="3" message="1702" wParam="0" lParam="770" sParam="" />
+            <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+            <Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1601" wParam="0" lParam="0" sParam=" Optional parameters: " />
+            <Action type="3" message="1625" wParam="0" lParam="1" sParam="" />
+            <Action type="3" message="1602" wParam="0" lParam="0" sParam='&quot;\n\t\t\t\t],\n\t\t\t\t&quot;optional&quot;: [\n\t\t\t\t\t&quot;' />
+            <Action type="3" message="1702" wParam="0" lParam="770" sParam="" />
+            <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+            <Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1601" wParam="0" lParam="0" sParam=" Returns: " />
+            <Action type="3" message="1625" wParam="0" lParam="1" sParam="" />
+            <Action type="3" message="1602" wParam="0" lParam="0" sParam='&quot;\n\t\t\t\t],\n\t\t\t\t&quot;returns&quot;: &quot;' />
+            <Action type="3" message="1702" wParam="0" lParam="770" sParam="" />
+            <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+            <Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1601" wParam="0" lParam="0" sParam=' ```&quot;' />
+            <Action type="3" message="1625" wParam="0" lParam="1" sParam="" />
+            <Action type="3" message="1602" wParam="0" lParam="0" sParam='&quot;\n\t\t\t}' />
+            <Action type="3" message="1702" wParam="0" lParam="770" sParam="" />
+            <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+            <Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1601" wParam="0" lParam="0" sParam='&quot;,\n\t\t\t&quot;' />
+            <Action type="3" message="1625" wParam="0" lParam="1" sParam="" />
+            <Action type="3" message="1602" wParam="0" lParam="0" sParam='&quot;\n\t\t\t},\n\t\t\t&quot;' />
+            <Action type="3" message="1702" wParam="0" lParam="770" sParam="" />
+            <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+			<!--5. Add commas to end quotes-->
+			<Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1601" wParam="0" lParam="0" sParam='&quot;\n' />
+            <Action type="3" message="1625" wParam="0" lParam="1" sParam="" />
+            <Action type="3" message="1602" wParam="0" lParam="0" sParam='&quot;,\n' />
+            <Action type="3" message="1702" wParam="0" lParam="770" sParam="" />
+            <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+			<!--6. Fix empty lists-->
+			<Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1601" wParam="0" lParam="0" sParam='[\n\t\t\t\t\t&quot;None&quot;,\n\t\t\t\t],' />
+            <Action type="3" message="1625" wParam="0" lParam="1" sParam="" />
+            <Action type="3" message="1602" wParam="0" lParam="0" sParam='&quot;None&quot;,' />
+            <Action type="3" message="1702" wParam="0" lParam="770" sParam="" />
+            <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+			<!--7. Fix multiple entries in attributes-->
+			<Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1601" wParam="0" lParam="0" sParam=' (\S*) \((...)\):' />
+            <Action type="3" message="1625" wParam="0" lParam="2" sParam="" />
+            <Action type="3" message="1602" wParam="0" lParam="0" sParam='&quot;,\n\t\t\t\t\t"$1 \($2\):' />
+            <Action type="3" message="1702" wParam="0" lParam="770" sParam="" />
+            <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+			<!--8. Continued fixing multiple entries in attributes-->
+			<Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1601" wParam="0" lParam="0" sParam='\t\t\t\t\t&quot;(\S*) \((...)\): (.*)&quot;,' />
+            <Action type="3" message="1625" wParam="0" lParam="2" sParam="" />
+            <Action type="3" message="1602" wParam="0" lParam="0" sParam='\t\t\t\t\t&quot;$1&quot;: {\n\t\t\t\t\t\t&quot;type&quot;: &quot;$2&quot;,\n\t\t\t\t\t\t&quot;description&quot;: &quot;$3&quot;,\n\t\t\t\t\t},' />
+            <Action type="3" message="1702" wParam="0" lParam="770" sParam="" />
+            <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+			<!--9. Spellcheck continued-->
+				<!--9.1 Weird quote-->
+			<Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1601" wParam="0" lParam="0" sParam='`' />
+            <Action type="3" message="1625" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1602" wParam="0" lParam="0" sParam='&apos;' />
+            <Action type="3" message="1702" wParam="0" lParam="770" sParam="" />
+            <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+				<!--9.2 Types-->
+					<!--9.2.1 Boolean-->
+			<Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1601" wParam="0" lParam="0" sParam='&quot;bol&quot;' />
+            <Action type="3" message="1625" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1602" wParam="0" lParam="0" sParam='&quot;Boolean&quot;' />
+            <Action type="3" message="1702" wParam="0" lParam="770" sParam="" />
+            <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+					<!--9.2.2 String-->
+			<Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1601" wParam="0" lParam="0" sParam='&quot;str&quot;' />
+            <Action type="3" message="1625" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1602" wParam="0" lParam="0" sParam='&quot;String&quot;' />
+            <Action type="3" message="1702" wParam="0" lParam="770" sParam="" />
+            <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+					<!--9.2.3 Integer-->
+			<Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1601" wParam="0" lParam="0" sParam='&quot;int&quot;' />
+            <Action type="3" message="1625" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1602" wParam="0" lParam="0" sParam='&quot;Integer&quot;' />
+            <Action type="3" message="1702" wParam="0" lParam="770" sParam="" />
+            <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+			<!--10. Format Returns-->
+				<!--10.1 JSON-->
+					<!--10.1.1 Fix colon-->
+			<Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1601" wParam="0" lParam="0" sParam='&quot;returns&quot;: &quot;json ' />
+            <Action type="3" message="1625" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1602" wParam="0" lParam="0" sParam='&quot;returns&quot;: &quot;json: ' />
+            <Action type="3" message="1702" wParam="0" lParam="770" sParam="" />
+            <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+					<!--10.1.2 Format-->
+			<Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1601" wParam="0" lParam="0" sParam='&quot;returns&quot;: &quot;json: (.*)&quot;,' />
+            <Action type="3" message="1625" wParam="0" lParam="2" sParam="" />
+            <Action type="3" message="1602" wParam="0" lParam="0" sParam='&quot;returns_type&quot;: &quot;json&quot;,\n\t\t\t\t&quot;returns_data&quot;: &quot;$1&quot;,' />
+            <Action type="3" message="1702" wParam="0" lParam="770" sParam="" />
+            <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+				<!--10.2 None-->
+			<Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1601" wParam="0" lParam="0" sParam='&quot;returns&quot;: &quot;None&quot;,' />
+            <Action type="3" message="1625" wParam="0" lParam="2" sParam="" />
+            <Action type="3" message="1602" wParam="0" lParam="0" sParam='&quot;returns_type&quot;: &quot;None&quot;,\n\t\t\t\t&quot;returns_data&quot;: &quot;&quot;,' />
+            <Action type="3" message="1702" wParam="0" lParam="770" sParam="" />
+            <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+				<!--10.3 String-->
+			<Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1601" wParam="0" lParam="0" sParam='&quot;returns&quot;: &quot;string: (.*)&quot;,' />
+            <Action type="3" message="1625" wParam="0" lParam="2" sParam="" />
+            <Action type="3" message="1602" wParam="0" lParam="0" sParam='&quot;returns_type&quot;: &quot;String&quot;,\n\t\t\t\t&quot;returns_data&quot;: &quot;$1&quot;,' />
+            <Action type="3" message="1702" wParam="0" lParam="770" sParam="" />
+            <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+				<!--10.4 String-->
+			<Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1601" wParam="0" lParam="0" sParam='&quot;returns&quot;: &quot;download&quot;,' />
+            <Action type="3" message="1625" wParam="0" lParam="2" sParam="" />
+            <Action type="3" message="1602" wParam="0" lParam="0" sParam='&quot;returns_type&quot;: &quot;File&quot;,\n\t\t\t\t&quot;returns_data&quot;: &quot;File Download&quot;,' />
+            <Action type="3" message="1702" wParam="0" lParam="770" sParam="" />
+            <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+			<!--11. Add missing required and optional-->
+			<Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+            <Action type="3" message="1601" wParam="0" lParam="0" sParam='&quot;description&quot;: &quot;(.*)&quot;,\n\t\t\t},' />
+            <Action type="3" message="1625" wParam="0" lParam="2" sParam="" />
+            <Action type="3" message="1602" wParam="0" lParam="0" sParam='&quot;description&quot;: &quot;$1&quot;,\n\t\t\t\t&quot;required&quot;: &quot;None&quot;,\n\t\t\t\t&quot;optional&quot;: &quot;None&quot;,\n\t\t\t},' />
+            <Action type="3" message="1702" wParam="0" lParam="770" sParam="" />
+            <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+			
+		</Macro>
+    </Macros>
+    <UserDefinedCommands>
+        <Command name="Get PHP help" Ctrl="no" Alt="yes" Shift="no" Key="112">https://www.php.net/$(CURRENT_WORD)</Command>
+        <Command name="Wikipedia Search" Ctrl="no" Alt="yes" Shift="no" Key="114">https://en.wikipedia.org/wiki/Special:Search?search=$(CURRENT_WORD)</Command>
+        <Command name="Open selected file path in new instance" Ctrl="no" Alt="yes" Shift="no" Key="117">$(NPP_FULL_FILE_PATH) $(CURRENT_WORD) -nosession -multiInst</Command>
+    </UserDefinedCommands>
+    <PluginCommands />
+    <ScintillaKeys />
+</NotepadPlus>

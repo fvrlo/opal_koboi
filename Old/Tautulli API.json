@@ -1,0 +1,2420 @@
+{
+	"commands": {
+		"add_newsletter_config": {
+			"description": "Add a new notification agent.",
+			"required": {
+				"agent_id": {
+					"type": "Integer",
+					"description": "The newsletter type to add"
+				}
+			},
+			"optional": "None",
+			"returns": {
+				"type": "None",
+				"data": "None"
+			}
+		},
+		"add_notifier_config": {
+			"description": "Add a new notification agent.",
+			"required": {
+				"agent_id": {
+					"type": "Integer",
+					"description": "The notification agent to add"
+				}
+			},
+			"optional": "None",
+			"returns": {
+				"type": "None",
+				"data": "None"
+			}
+		},
+		"arnold": {
+			"description": "Get to the chopper!",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "String",
+				"data": "Get to the choppa!"
+			}
+		},
+		"backup_config": {
+			"description": "Create a manual backup of the 'config.ini' file.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "Unknown",
+				"data": "Unknown"
+			}
+		},
+		"backup_db": {
+			"description": "Create a manual backup of the 'plexpy.db' file.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "Unknown",
+				"data": "Unknown"
+			}
+		},
+		"delete_all_library_history": {
+			"description": "Delete all Tautulli history for a specific library.",
+			"required": {
+				"server_id": {
+					"type": "String",
+					"description": "The Plex server identifier of the library section"
+				},
+				"section_id": {
+					"type": "String",
+					"description": "The id of the Plex library section"
+				}
+			},
+			"optional": {
+				"row_ids": {
+					"type": "String",
+					"description": "Comma separated row ids to delete, e.g. '2,3,8'"
+				}
+			},
+			"returns": {
+				"type": "None",
+				"data": "None"
+			}
+		},
+		"delete_all_user_history": {
+			"description": "Delete all Tautulli history for a specific user.",
+			"required": {
+				"user_id": {
+					"type": "String",
+					"description": "The id of the Plex user"
+				}
+			},
+			"optional": {
+				"row_ids": {
+					"type": "String",
+					"description": "Comma separated row ids to delete, e.g. '2,3,8'"
+				}
+			},
+			"returns": {
+				"type": "None",
+				"data": "None"
+			}
+		},
+		"delete_cache": {
+			"description": "Delete and recreate the cache directory.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "Unknown",
+				"data": "Unknown"
+			}
+		},
+		"delete_export": {
+			"description": "Delete exports from Tautulli.",
+			"required": {
+				"export_id": {
+					"type": "Integer",
+					"description": "The row id of the exported file to delete"
+				}
+			},
+			"optional": {
+				"delete_all": {
+					"type": "Boolean",
+					"description": "'true' to delete all exported files"
+				}
+			},
+			"returns": {
+				"type": "None",
+				"data": "None"
+			}
+		},
+		"delete_history": {
+			"description": "Delete history rows from Tautulli.",
+			"required": {
+				"row_ids": {
+					"type": "String",
+					"description": "Comma separated row ids to delete, e.g. '65,110,2,3645'"
+				}
+			},
+			"optional": "None",
+			"returns": {
+				"type": "None",
+				"data": "None"
+			}
+		},
+		"delete_hosted_images": {
+			"description": "Delete the images uploaded to image hosting services.",
+			"required": "None",
+			"optional": {
+				"rating_key": {
+					"type": "Integer",
+					"description": "1234 (Note: Must be the movie, show, season, artist, or album rating key)"
+				},
+				"service": {
+					"type": "String",
+					"description": "'imgur' or 'cloudinary'"
+				},
+				"delete_all": {
+					"type": "Boolean",
+					"description": "'true' to delete all images form the service"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'result': 'success', 'message': 'Deleted hosted images from Imgur.'}"
+			}
+		},
+		"delete_image_cache": {
+			"description": "Delete and recreate the image cache directory.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "Unknown",
+				"data": "Unknown"
+			}
+		},
+		"delete_library": {
+			"description": "Delete a library section from Tautulli. Also erases all history for the library.",
+			"required": {
+				"server_id": {
+					"type": "String",
+					"description": "The Plex server identifier of the library section"
+				},
+				"section_id": {
+					"type": "String",
+					"description": "The id of the Plex library section"
+				}
+			},
+			"optional": {
+				"row_ids": {
+					"type": "String",
+					"description": "Comma separated row ids to delete, e.g. '2,3,8'"
+				}
+			},
+			"returns": {
+				"type": "None",
+				"data": "None"
+			}
+		},
+		"delete_login_log": {
+			"description": "Delete the Tautulli login logs.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "None",
+				"data": "None"
+			}
+		},
+		"delete_lookup_info": {
+			"description": "Delete the 3rd party API lookup info.",
+			"required": "None",
+			"optional": {
+				"rating_key": {
+					"type": "Integer",
+					"description": "1234 (Note: Must be the movie, show, artist, album, or track rating key)"
+				},
+				"service": {
+					"type": "String",
+					"description": "'themoviedb' or 'tvmaze' or 'musicbrainz'"
+				},
+				"delete_all": {
+					"type": "Boolean",
+					"description": "'true' to delete all images form the service"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'result': 'success', 'message': 'Deleted lookup info.'}"
+			}
+		},
+		"delete_media_info_cache": {
+			"description": "Delete the media info table cache for a specific library.",
+			"required": {
+				"section_id": {
+					"type": "String",
+					"description": "The id of the Plex library section"
+				}
+			},
+			"optional": "None",
+			"returns": {
+				"type": "None",
+				"data": "None"
+			}
+		},
+		"delete_mobile_device": {
+			"description": "Remove a mobile device from the database.",
+			"required": {
+				"OR": {
+					"mobile_device_id": {
+						"type": "Integer",
+						"description": "The mobile device database id to delete"
+					},
+					"device_id": {
+						"type": "String",
+						"description": "The unique device identifier for the mobile device"
+					}
+				}
+			},
+			"optional": "None",
+			"returns": {
+				"type": "None",
+				"data": "None"
+			}
+		},
+		"delete_newsletter": {
+			"description": "Remove a newsletter from the database.",
+			"required": {
+				"newsletter_id": {
+					"type": "Integer",
+					"description": "The newsletter to delete"
+				}
+			},
+			"optional": "None",
+			"returns": {
+				"type": "None",
+				"data": "None"
+			}
+		},
+		"delete_newsletter_log": {
+			"description": "Delete the Tautulli newsletter logs.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "None",
+				"data": "None"
+			}
+		},
+		"delete_notification_log": {
+			"description": "Delete the Tautulli notification logs.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "None",
+				"data": "None"
+			}
+		},
+		"delete_notifier": {
+			"description": "Remove a notifier from the database.",
+			"required": {
+				"notifier_id": {
+					"type": "Integer",
+					"description": "The notifier to delete"
+				}
+			},
+			"optional": "None",
+			"returns": {
+				"type": "None",
+				"data": "None"
+			}
+		},
+		"delete_recently_added": {
+			"description": "Flush out all of the recently added items in the database.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "Unknown",
+				"data": "Unknown"
+			}
+		},
+		"delete_synced_item": {
+			"description": "Delete a synced item from a device.",
+			"required": {
+				"client_id": {
+					"type": "String",
+					"description": "The client ID of the device to delete from"
+				},
+				"sync_id": {
+					"type": "String",
+					"description": "The sync ID of the synced item"
+				}
+			},
+			"optional": "None",
+			"returns": {
+				"type": "None",
+				"data": "None"
+			}
+		},
+		"delete_temp_sessions": {
+			"description": "Flush out all of the temporary sessions in the database.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "Unknown",
+				"data": "Unknown"
+			}
+		},
+		"delete_user": {
+			"description": "Delete a user from Tautulli. Also erases all history for the user.",
+			"required": {
+				"user_id": {
+					"type": "String",
+					"description": "The id of the Plex user"
+				}
+			},
+			"optional": {
+				"row_ids": {
+					"type": "String",
+					"description": "Comma separated row ids to delete, e.g. '2,3,8'"
+				}
+			},
+			"returns": {
+				"type": "None",
+				"data": "None"
+			}
+		},
+		"docs": {
+			"description": "Return the api docs as a dict where commands are keys, docstring are value.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "Unknown",
+				"data": "Unknown"
+			}
+		},
+		"docs_md": {
+			"description": "Return the api docs formatted with markdown.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "Unknown",
+				"data": "Unknown"
+			}
+		},
+		"download_config": {
+			"description": "Download the Tautulli configuration file.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "Unknown",
+				"data": "Unknown"
+			}
+		},
+		"download_database": {
+			"description": "Download the Tautulli database file.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "Unknown",
+				"data": "Unknown"
+			}
+		},
+		"download_export": {
+			"description": "Download an exported metadata file",
+			"required": {
+				"export_id": {
+					"type": "Integer",
+					"description": "The row id of the exported file to download"
+				}
+			},
+			"optional": "None",
+			"returns": {
+				"type": "File"
+			}
+		},
+		"download_log": {
+			"description": "Download the Tautulli log file.",
+			"required": "None",
+			"optional": {
+				"logfile": {
+					"type": "String",
+					"description": "The name of the Tautulli log file, 'tautulli', 'tautulli_api', 'plex_websocket'"
+				}
+			},
+			"returns": {
+				"type": "File"
+			}
+		},
+		"download_plex_log": {
+			"description": "Download the Plex log file.",
+			"required": "None",
+			"optional": {
+				"logfile": {
+					"type": "Integer",
+					"description": "The name of the Plex log file, e.g. 'Plex Media Server', 'Plex Media Scanner'"
+				}
+			},
+			"returns": {
+				"type": "File"
+			}
+		},
+		"edit_library": {
+			"description": "Update a library section on Tautulli.",
+			"required": {
+				"section_id": {
+					"type": "String",
+					"description": "The id of the Plex library section"
+				},
+				"custom_thumb": {
+					"type": "String",
+					"description": "The URL for the custom library thumbnail"
+				},
+				"custom_art": {
+					"type": "String",
+					"description": "The URL for the custom library background art"
+				},
+				"keep_history": {
+					"type": "Integer",
+					"description": "0 or 1"
+				}
+			},
+			"optional": "None",
+			"returns": {
+				"type": "None",
+				"data": "None"
+			}
+		},
+		"edit_user": {
+			"description": "Update a user on Tautulli.",
+			"required": {
+				"user_id": {
+					"type": "String",
+					"description": "The id of the Plex user friendly_name(str): The friendly name of the user"
+				},
+				"custom_thumb": {
+					"type": "String",
+					"description": "The URL for the custom user thumbnail"
+				},
+				"keep_history": {
+					"type": "Integer",
+					"description": "0 or 1"
+				},
+				"allow_guest": {
+					"type": "Integer",
+					"description": "0 or 1"
+				}
+			},
+			"optional": "None",
+			"returns": {
+				"type": "None",
+				"data": "None"
+			}
+		},
+		"export_metadata": {
+			"description": "Export library or media metadata to a file",
+			"required": {
+				"OR": {
+					"section_id": {
+						"type": "Integer",
+						"description": "The section id of the library items to export"
+					},
+					"user_id": {
+						"type": "Integer",
+						"description": "The user id of the playlist items to export"
+					}
+				},
+				"rating_key": {
+					"type": "Integer",
+					"description": "The rating key of the media item to export"
+				}
+			},
+			"optional": {
+				"file_format": {
+					"type": "String",
+					"description": "csv (default), json, xml, or m3u8"
+				},
+				"metadata_level": {
+					"type": "Integer",
+					"description": "The level of metadata to export (default 1)"
+				},
+				"media_info_level": {
+					"type": "Integer",
+					"description": "The level of media info to export (default 1)"
+				},
+				"thumb_level": {
+					"type": "Integer",
+					"description": "The level of poster/cover images to export (default 0)"
+				},
+				"art_level": {
+					"type": "Integer",
+					"description": "The level of background artwork images to export (default 0)"
+				},
+				"custom_fields": {
+					"type": "String",
+					"description": "Comma separated list of custom fields to export in addition to the export level selected"
+				},
+				"export_type": {
+					"type": "String",
+					"description": "'collection' or 'playlist' for library/user export, otherwise default to all library items"
+				},
+				"individual_files": {
+					"type": "Boolean",
+					"description": "Export each item as an individual file for library/user export."
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'result': 'success', 'message': 'Metadata export has started.' }"
+			}
+		},
+		"get_activity": {
+			"description": "Get the current activity on the PMS.",
+			"required": "None",
+			"optional": {
+				"OR": {
+					"session_key": {
+						"type": "Integer",
+						"description": "Session key for the session info to return"
+					},
+					"session_id": {
+						"type": "String",
+						"description": "Session ID for the session info to return"
+					}
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'lan_bandwidth': 25318, 'sessions': { { 'actors': { 'Kit Harington', 'Emilia Clarke', 'Isaac Hempstead-Wright', 'Maisie Williams', 'Liam Cunningham' }, 'added_at': '1461572396', 'allow_guest': 1, 'art': '/library/metadata/1219/art/1503306930', 'aspect_ratio': '1.78', 'audience_rating': '', 'audience_rating_image': 'rottentomatoes://image.rating.upright', 'audio_bitrate': '384', 'audio_bitrate_mode': '', 'audio_channel_layout': '5.1(side)', 'audio_channels': '6', 'audio_codec': 'ac3', 'audio_decision': 'direct play', 'audio_language': '', 'audio_language_code': '', 'audio_profile': '', 'audio_sample_rate': '48000', 'bandwidth': '25318', 'banner': '/library/metadata/1219/banner/1503306930', 'bif_thumb': '/library/parts/274169/indexes/sd/1000', 'bitrate': '10617', 'channel_call_sign': '', 'channel_identifier': '', 'channel_stream': 0, 'channel_thumb': '', 'children_count': '', 'collections': {}, 'container': 'mkv', 'container_decision': 'direct play', 'content_rating': 'TV-MA', 'deleted_user': 0, 'device': 'Windows', 'directors': { 'Jeremy Podeswa' }, 'do_notify': 0, 'duration': '2998272', 'email': 'Jon.Snow.1337@CastleBlack.com', 'file': '/media/TV Shows/Game of Thrones/Season 06/Game of Thrones - S06E01 - The Red Woman.mkv', 'file_size': '3979115377', 'friendly_name': 'Jon Snow', 'full_title': 'Game of Thrones - The Red Woman', 'genres': { 'Adventure', 'Drama', 'Fantasy' }, 'grandparent_guid': 'com.plexapp.agents.thetvdb://121361?lang=en', 'grandparent_rating_key': '1219', 'grandparent_thumb': '/library/metadata/1219/thumb/1503306930', 'grandparent_title': 'Game of Thrones', 'guid': 'com.plexapp.agents.thetvdb://121361/6/1?lang=en', 'height': '1078', 'id': '', 'indexes': 1, 'ip_address': '10.10.10.1', 'ip_address_public': '64.123.23.111', 'is_admin': 1, 'is_allow_sync': 1, 'is_home_user': 1, 'is_restricted': 0, 'keep_history': 1, 'labels': {}, 'last_viewed_at': '1462165717', 'library_name': 'TV Shows', 'live': 0, 'live_uuid': '', 'local': '1', 'location': 'lan', 'machine_id': 'lmd93nkn12k29j2lnm', 'media_index': '1', 'media_type': 'episode', 'optimized_version': 0, 'optimized_version_profile': '', 'optimized_version_title': '', 'original_title': '', 'originally_available_at': '2016-04-24', 'parent_guid': 'com.plexapp.agents.thetvdb://121361/6?lang=en', 'parent_media_index': '6', 'parent_rating_key': '153036', 'parent_thumb': '/library/metadata/153036/thumb/1503889210', 'parent_title': 'Season 6', 'platform': 'Plex Media Player', 'platform_name': 'plex', 'platform_version': '2.4.1.787-54a020cd', 'player': 'Castle-PC', 'product': 'Plex Media Player', 'product_version': '3.35.2', 'profile': 'Konvergo', 'progress_percent': '0', 'quality_profile': 'Original', 'rating': '7.8', 'rating_image': 'rottentomatoes://image.rating.ripe', 'rating_key': '153037', 'relay': 0, 'section_id': '2', 'secure': 1, 'session_id': 'helf15l3rxgw01xxe0jf3l3d', 'session_key': '27', 'shared_libraries': { '10', '1', '4', '5', '15', '20', '2' }, 'sort_title': 'Red Woman', 'state': 'playing', 'stream_aspect_ratio': '1.78', 'stream_audio_bitrate': '384', 'stream_audio_bitrate_mode': '', 'stream_audio_channel_layout': '5.1(side)', 'stream_audio_channel_layout_': '5.1(side)', 'stream_audio_channels': '6', 'stream_audio_codec': 'ac3', 'stream_audio_decision': 'direct play', 'stream_audio_language': '', 'stream_audio_language_code': '', 'stream_audio_sample_rate': '48000', 'stream_bitrate': '10617', 'stream_container': 'mkv', 'stream_container_decision': 'direct play', 'stream_duration': '2998272', 'stream_subtitle_codec': '', 'stream_subtitle_container': '', 'stream_subtitle_decision': '', 'stream_subtitle_forced': 0, 'stream_subtitle_format': '', 'stream_subtitle_language': '', 'stream_subtitle_language_code': '', 'stream_subtitle_location': '', 'stream_video_bit_depth': '8', 'stream_video_bitrate': '10233', 'stream_video_chroma_subsampling': '4:2:0', 'stream_video_codec': 'h264', 'stream_video_codec_level': '41', 'stream_video_color_primaries': '', 'stream_video_color_range': 'tv', 'stream_video_color_space': 'bt709', 'stream_video_color_trc': '', 'stream_video_decision': 'direct play', 'stream_video_dynamic_range': 'SDR', 'stream_video_framerate': '24p', 'stream_video_full_resolution': '1080p', 'stream_video_height': '1078', 'stream_video_language': '', 'stream_video_language_code': '', 'stream_video_ref_frames': '4', 'stream_video_resolution': '1080', 'stream_video_scan_type': 'progressive', 'stream_video_width': '1920', 'studio': 'HBO', 'subtitle_codec': '', 'subtitle_container': '', 'subtitle_decision': '', 'subtitle_forced': 0, 'subtitle_format': '', 'subtitle_language': '', 'subtitle_language_code': '', 'subtitle_location': '', 'subtitles': 0, 'summary': 'Jon Snow is dead. Daenerys meets a strong man. Cersei sees her daughter again.', 'synced_version': 0, 'synced_version_profile': '', 'tagline': '', 'throttled': '0', 'thumb': '/library/metadata/153037/thumb/1503889207', 'title': 'The Red Woman', 'transcode_audio_channels': '', 'transcode_audio_codec': '', 'transcode_container': '', 'transcode_decision': 'direct play', 'transcode_height': '', 'transcode_hw_decode': '', 'transcode_hw_decode_title': '', 'transcode_hw_decoding': 0, 'transcode_hw_encode': '', 'transcode_hw_encode_title': '', 'transcode_hw_encoding': 0, 'transcode_hw_full_pipeline': 0, 'transcode_hw_requested': 0, 'transcode_key': '', 'transcode_max_offset_available': 0, 'transcode_min_offset_available': 0, 'transcode_progress': 0, 'transcode_protocol': '', 'transcode_speed': '', 'transcode_throttled': 0, 'transcode_video_codec': '', 'transcode_width': '', 'type': '', 'updated_at': '1503889207', 'user': 'LordCommanderSnow', 'user_id': 133788, 'user_rating': '', 'user_thumb': 'https://plex.tv/users/k10w42309cynaopq/avatar', 'username': 'LordCommanderSnow', 'video_bit_depth': '8', 'video_bitrate': '10233', 'video_chroma_subsampling': '4:2:0', 'video_codec': 'h264', 'video_codec_level': '41', 'video_color_primaries': '', 'video_color_range': 'tv', 'video_color_space': 'bt709', 'video_color_trc': ', 'video_decision': 'direct play', 'video_dynamic_range': 'SDR', 'video_frame_rate': '23.976', 'video_framerate': '24p', 'video_full_resolution': '1080p', 'video_height': '1078', 'video_language': '', 'video_language_code': '', 'video_profile': 'high', 'video_ref_frames': '4', 'video_resolution': '1080', 'video_scan_type': 'progressive', 'video_width': '1920', 'view_offset': '1000', 'width': '1920', 'writers': { 'David Benioff', 'D. B. Weiss' }, 'year': '2016' } }, 'stream_count': '1', 'stream_count_direct_play': 1, 'stream_count_direct_stream': 0, 'stream_count_transcode': 0, 'total_bandwidth': 25318, 'wan_bandwidth': 0 }"
+			}
+		},
+		"get_apikey": {
+			"description": "Get the apikey. Username and password are required if auth is enabled. Makes and saves the apikey if it does not exist.",
+			"required": "None",
+			"optional": {
+				"username": {
+					"type": "String",
+					"description": "Your Tautulli username"
+				},
+				"password": {
+					"type": "String",
+					"description": "Your Tautulli password"
+				}
+			},
+			"returns": {
+				"type": "String",
+				"data": "'apikey'"
+			}
+		},
+		"get_children_metadata": {
+			"description": "Get the metadata for the children of a media item.",
+			"required": {
+				"rating_key": {
+					"type": "String",
+					"description": "Rating key of the item"
+				},
+				"media_type": {
+					"type": "String",
+					"description": "Media type of the item"
+				}
+			},
+			"optional": "None",
+			"returns": {
+				"type": "JSON",
+				"data": "{'children_count': 9, 'children_type': 'season', 'title': 'Game of Thrones', 'children_list': { {...}, {'actors': {}, 'added_at': '1403553078', 'art': '/library/metadata/1219/art/1562110346', 'audience_rating': '', 'audience_rating_image': '', 'banner': '', 'content_rating': '', 'directors': {}, 'duration': '', 'full_title': 'Season 1' 'genres': {}, 'grandparent_rating_key': '', 'grandparent_thumb': '', 'grandparent_title': '', 'guid': 'com.plexapp.agents.thetvdb://121361/1?lang=en', 'labels': {}, 'last_viewed_at': '1589992348', 'library_name': 'TV Shows', 'media_index': '1', 'media_type': 'season', 'original_title': '', 'originally_available_at': '', 'parent_media_index': '1', 'parent_rating_key': '1219', 'parent_thumb': '/library/metadata/1219/thumb/1562110346', 'parent_title': 'Game of Thrones', 'rating': '', 'rating_image': '', 'rating_key': '1220', 'section_id': '2', 'sort_title': '', 'studio': '', 'summary': '', 'tagline': '', 'thumb': '/library/metadata/1220/thumb/1602176313', 'title': 'Season 1', 'updated_at': '1602176313', 'user_rating': '', 'writers': {}, 'year': '' }, {...}, {...} } }"
+			}
+		},
+		"get_collections_table": {
+			"description": "Get the data on the Tautulli collections tables.",
+			"required": {
+				"section_id": {
+					"type": "String",
+					"description": "The id of the Plex library section"
+				}
+			},
+			"optional": "None",
+			"returns": {
+				"type": "JSON",
+				"data": "{'draw': 1, 'recordsTotal': 5, 'data': {...} }"
+			}
+		},
+		"get_date_formats": {
+			"description": "Get the date and time formats used by Tautulli.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "JSON",
+				"data": "{'date_format': 'YYYY-MM-DD', 'time_format': 'HH:mm' }"
+			}
+		},
+		"get_export_fields": {
+			"description": "Get a list of available custom export fields.",
+			"required": {
+				"media_type": {
+					"type": "String",
+					"description": "The media type of the fields to return"
+				}
+			},
+			"optional": {
+				"sub_media_type": {
+					"type": "String",
+					"description": "The child media type for collections (movie, show, artist, album, photoalbum), or playlists (video, audio, photo)"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'metadata_fields': {{'field': 'addedAt', 'level': 1} ... }, 'media_info_fields': {{'field': 'media.aspectRatio', 'level': 1} ... } }"
+			}
+		},
+		"get_exports_table": {
+			"description": "Get the data on the Tautulli export tables.",
+			"required": {
+				"OR": {
+					"section_id": {
+						"type": "String",
+						"description": "The id of the Plex library section"
+					},
+					"user_id": {
+						"type": "String",
+						"description": "The id of the Plex user"
+					},
+					"rating_key": {
+						"type": "String",
+						"description": "The rating key of the exported item"
+					}
+				}
+			},
+			"optional": {
+				"order_column": {
+					"type": "String",
+					"description": "'added_at', 'sort_title', 'container', 'bitrate', 'video_codec', 'video_resolution', 'video_framerate', 'audio_codec', 'audio_channels', 'file_size', 'last_played', 'play_count'"
+				},
+				"order_dir": {
+					"type": "String",
+					"description": "'desc' or 'asc'"
+				},
+				"start": {
+					"type": "Integer",
+					"description": "Row to start from, 0"
+				},
+				"length": {
+					"type": "Integer",
+					"description": "Number of items to return, 25"
+				},
+				"search": {
+					"type": "String",
+					"description": "A string to search for, 'Thrones'"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'draw': 1, 'recordsTotal': 10, 'recordsFiltered': 3, 'data': {{'timestamp': 1602823644, 'art_level': 0, 'complete': 1, 'custom_fields': '', 'exists': true, 'export_id': 42, 'exported_items': 28, 'file_format': 'json', 'file_size': 57793562, 'filename': null, 'individual_files': 1, 'media_info_level': 1, 'media_type': 'collection', 'media_type_title': 'Collection', 'metadata_level': 1, 'rating_key': null, 'section_id': 1, 'thumb_level': 2, 'title': 'Library - Movies - Collection {1}', 'total_items': 28, 'user_id': null }, {...}, {...} } }"
+			}
+		},
+		"get_geoip_lookup": {
+			"description": "Get the geolocation info for an IP address.",
+			"required": {
+				"ip_address": {
+					"type": "String",
+					"description": "IP Address"
+				}
+			},
+			"optional": "None",
+			"returns": {
+				"type": "JSON",
+				"data": "{'city': 'Mountain View', 'code': 'US', 'continent': 'NA', 'country': 'United States', 'latitude': 37.386, 'longitude': -122.0838, 'postal_code': '94035', 'region': 'California', 'timezone': 'America/Los_Angeles', 'accuracy': null }"
+			}
+		},
+		"get_history": {
+			"description": "Get the Tautulli history.",
+			"required": "None",
+			"optional": {
+				"grouping": {
+					"type": "Integer",
+					"description": "0 or 1"
+				},
+				"include_activity": {
+					"type": "Integer",
+					"description": "0 or 1"
+				},
+				"user": {
+					"type": "String",
+					"description": "'Jon Snow'"
+				},
+				"user_id": {
+					"type": "Integer",
+					"description": "133788"
+				},
+				"rating_key": {
+					"type": "Integer",
+					"description": "4348"
+				},
+				"parent_rating_key": {
+					"type": "Integer",
+					"description": "544"
+				},
+				"grandparent_rating_key": {
+					"type": "Integer",
+					"description": "351"
+				},
+				"start_date": {
+					"type": "String",
+					"description": "History for the exact date, 'YYYY-MM-DD'"
+				},
+				"before": {
+					"type": "String",
+					"description": "History before and including the date, 'YYYY-MM-DD'"
+				},
+				"after": {
+					"type": "String",
+					"description": "History after and including the date, 'YYYY-MM-DD'"
+				},
+				"section_id": {
+					"type": "Integer",
+					"description": "2"
+				},
+				"media_type": {
+					"type": "String",
+					"description": "'movie', 'episode', 'track', 'live'"
+				},
+				"transcode_decision": {
+					"type": "String",
+					"description": "'direct play', 'copy', 'transcode',"
+				},
+				"guid": {
+					"type": "String",
+					"description": "Plex guid for an item, e.g. 'com.plexapp.agents.thetvdb://121361/6/1'"
+				},
+				"order_column": {
+					"type": "String",
+					"description": "'date', 'friendly_name', 'ip_address', 'platform', 'player', 'full_title', 'started', 'paused_counter', 'stopped', 'duration'"
+				},
+				"order_dir": {
+					"type": "String",
+					"description": "'desc' or 'asc'"
+				},
+				"start": {
+					"type": "Integer",
+					"description": "Row to start from, 0"
+				},
+				"length": {
+					"type": "Integer",
+					"description": "Number of items to return, 25"
+				},
+				"search": {
+					"type": "String",
+					"description": "A string to search for, 'Thrones'"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'draw': 1, 'recordsTotal': 1000, 'recordsFiltered': 250, 'total_duration': '42 days 5 hrs 18 mins', 'filter_duration': '10 hrs 12 mins', 'data': {{'date': 1462687607, 'duration': 263, 'friendly_name': 'Mother of Dragons', 'full_title': 'Game of Thrones - The Red Woman', 'grandparent_rating_key': 351, 'grandparent_title': 'Game of Thrones', 'original_title': '', 'group_count': 1, 'group_ids': '1124', 'guid': 'com.plexapp.agents.thetvdb://121361/6/1?lang=en', 'ip_address': 'xxx.xxx.xxx.xxx', 'live': 0, 'location': 'wan', 'machine_id': 'lmd93nkn12k29j2lnm', 'media_index': 17, 'media_type': 'episode', 'originally_available_at': '2016-04-24', 'parent_media_index': 7, 'parent_rating_key': 544, 'parent_title': '', 'paused_counter': 0, 'percent_complete': 84, 'platform': 'Windows', 'product': 'Plex for Windows', 'player': 'Castle-PC', 'rating_key': 4348, 'reference_id': 1123, 'relayed': 0, 'row_id': 1124, 'secure': 1, 'session_key': null, 'started': 1462688107, 'state': null, 'stopped': 1462688370, 'thumb': '/library/metadata/4348/thumb/1462414561', 'title': 'The Red Woman', 'transcode_decision': 'transcode', 'user': 'DanyKhaleesi69', 'user_id': 8008135, 'watched_status': 0, 'year': 2016 }, {...}, {...} } }"
+			}
+		},
+		"get_home_stats": {
+			"description": "Get the homepage watch statistics.",
+			"required": "None",
+			"optional": {
+				"grouping": {
+					"type": "Integer",
+					"description": "0 or 1"
+				},
+				"time_range": {
+					"type": "Integer",
+					"description": "The time range to calculate statistics, 30"
+				},
+				"stats_type": {
+					"type": "String",
+					"description": "'plays' or 'duration'"
+				},
+				"stats_start": {
+					"type": "Integer",
+					"description": "The row number of the stat item to start at, 0"
+				},
+				"stats_count": {
+					"type": "Integer",
+					"description": "The number of stat items to return, 5"
+				},
+				"stat_id": {
+					"type": "String",
+					"description": "A single stat to return, 'top_movies', 'popular_movies', 'top_tv', 'popular_tv', 'top_music', 'popular_music', 'top_libraries', 'top_users', 'top_platforms', 'last_watched', 'most_concurrent'"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{{'stat_id': 'top_movies', 'stat_type': 'total_plays', 'rows': {{...}} }, {'stat_id': 'popular_movies', 'rows': {{...}} }, {'stat_id': 'top_tv', 'stat_type': 'total_plays', 'rows': {{'content_rating': 'TV-MA', 'friendly_name': '', 'grandparent_thumb': '/library/metadata/1219/thumb/1462175063', 'guid': 'com.plexapp.agents.thetvdb://121361/6/1?lang=en', 'labels': {}, 'last_play': 1462380698, 'live': 0, 'media_type': 'episode', 'platform': '', 'rating_key': 1219, 'row_id': 1116, 'section_id': 2, 'thumb': '', 'title': 'Game of Thrones', 'total_duration': 213302, 'total_plays': 69, 'user': '', 'users_watched': '' }, {...}, {...} } }, {'stat_id': 'popular_tv', 'rows': {{...}} }, {'stat_id': 'top_music', 'stat_type': 'total_plays', 'rows': {{...}} }, {'stat_id': 'popular_music', 'rows': {{...}} }, {'stat_id': 'last_watched', 'rows': {{...}} }, {'stat_id': 'top_libraries', 'stat_type': 'total_plays', 'rows': {{...}} }, {'stat_id': 'top_users', 'stat_type': 'total_plays', 'rows': {{...}} }, {'stat_id': 'top_platforms', 'stat_type': 'total_plays', 'rows': {{...}} }, {'stat_id': 'most_concurrent', 'rows': {{...}} } }"
+			}
+		},
+		"get_item_user_stats": {
+			"description": "Get the user stats for the media item.",
+			"required": {
+				"rating_key": {
+					"type": "String",
+					"description": "Rating key of the item"
+				}
+			},
+			"optional": {
+				"grouping": {
+					"type": "Integer",
+					"description": "0 or 1"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{ { 'friendly_name': 'Jon Snow', 'user_id': 1601089, 'user_thumb': '', 'username': 'jsnow@thewinteriscoming.com', 'total_plays': 6, 'total_time': 28743 }, { 'friendly_name': 'DanyKhaleesi69', 'user_id': 8008135, 'user_thumb': '', 'username': 'DanyKhaleesi69', 'total_plays': 5, 'total_time': 18583 } }"
+			}
+		},
+		"get_item_watch_time_stats": {
+			"description": "Get the watch time stats for the media item.",
+			"required": {
+				"rating_key": {
+					"type": "String",
+					"description": "Rating key of the item"
+				}
+			},
+			"optional": {
+				"grouping": {
+					"type": "Integer",
+					"description": "0 or 1"
+				},
+				"query_days": {
+					"type": "String",
+					"description": "Comma separated days, e.g. '1,7,30,0'"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{ { 'query_days': 1, 'total_time': 0, 'total_plays': 0 }, { 'query_days': 7, 'total_time': 0, 'total_plays': 0 }, { 'query_days': 30, 'total_time': 0, 'total_plays': 0 }, { 'query_days': 0, 'total_time': 57776, 'total_plays': 13 } }"
+			}
+		},
+		"get_libraries": {
+			"description": "Get a list of all libraries on your server.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "JSON",
+				"data": "{{'art': '/:/resources/show-fanart.jpg', 'child_count': '3745', 'count': '62', 'is_active': 1, 'parent_count': '240', 'section_id': '2', 'section_name': 'TV Shows', 'section_type': 'show', 'thumb': '/:/resources/show.png' }, {...}, {...} }"
+			}
+		},
+		"get_libraries_table": {
+			"description": "Get the data on the Tautulli libraries table.",
+			"required": "None",
+			"optional": {
+				"grouping": {
+					"type": "Integer",
+					"description": "0 or 1"
+				},
+				"order_column": {
+					"type": "String",
+					"description": "'library_thumb', 'section_name', 'section_type', 'count', 'parent_count', 'child_count', 'last_accessed', 'last_played', 'plays', 'duration'"
+				},
+				"order_dir": {
+					"type": "String",
+					"description": "'desc' or 'asc'"
+				},
+				"start": {
+					"type": "Integer",
+					"description": "Row to start from, 0"
+				},
+				"length": {
+					"type": "Integer",
+					"description": "Number of items to return, 25"
+				},
+				"search": {
+					"type": "String",
+					"description": "A string to search for, 'Movies'"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'draw': 1, 'recordsTotal': 10, 'recordsFiltered': 10, 'data': {{'child_count': 3745, 'content_rating': 'TV-MA', 'count': 62, 'do_notify': 1, 'do_notify_created': 1, 'duration': 1578037, 'guid': 'com.plexapp.agents.thetvdb://121361/6/1?lang=en', 'histroy_row_id': 1128, 'is_active': 1, 'keep_history': 1, 'labels': {}, 'last_accessed': 1462693216, 'last_played': 'Game of Thrones - The Red Woman', 'library_art': '/:/resources/show-fanart.jpg', 'library_thumb': '/:/resources/show.png', 'live': 0, 'media_index': 1, 'media_type': 'episode', 'originally_available_at': '2016-04-24', 'parent_count': 240, 'parent_media_index': 6, 'parent_title': '', 'plays': 772, 'rating_key': 153037, 'row_id': 1, 'section_id': 2, 'section_name': 'TV Shows', 'section_type': 'Show', 'server_id': 'ds48g4r354a8v9byrrtr697g3g79w', 'thumb': '/library/metadata/153036/thumb/1462175062', 'year': 2016 }, {...}, {...} } }"
+			}
+		},
+		"get_library": {
+			"description": "Get a library's details.",
+			"required": {
+				"section_id": {
+					"type": "String",
+					"description": "The id of the Plex library section"
+				}
+			},
+			"optional": {
+				"include_last_accessed": {
+					"type": "Boolean",
+					"description": "True to include the last_accessed value for the library."
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'child_count': null, 'count': 887, 'deleted_section': 0, 'do_notify': 1, 'do_notify_created': 1, 'is_active': 1, 'keep_history': 1, 'last_accessed': 1462693216, 'library_art': '/:/resources/movie-fanart.jpg', 'library_thumb': '/:/resources/movie.png', 'parent_count': null, 'row_id': 1, 'section_id': 1, 'section_name': 'Movies', 'section_type': 'movie', 'server_id': 'ds48g4r354a8v9byrrtr697g3g79w' }"
+			}
+		},
+		"get_library_media_info": {
+			"description": "Get the data on the Tautulli media info tables.",
+			"required": {
+				"OR": {
+					"section_id": {
+						"type": "String",
+						"description": "The id of the Plex library section"
+					},
+					"rating_key": {
+						"type": "String",
+						"description": "The grandparent or parent rating key"
+					}
+				}
+			},
+			"optional": {
+				"section_type": {
+					"type": "String",
+					"description": "'movie', 'show', 'artist', 'photo'"
+				},
+				"order_column": {
+					"type": "String",
+					"description": "'added_at', 'sort_title', 'container', 'bitrate', 'video_codec', 'video_resolution', 'video_framerate', 'audio_codec', 'audio_channels', 'file_size', 'last_played', 'play_count'"
+				},
+				"order_dir": {
+					"type": "String",
+					"description": "'desc' or 'asc'"
+				},
+				"start": {
+					"type": "Integer",
+					"description": "Row to start from, 0"
+				},
+				"length": {
+					"type": "Integer",
+					"description": "Number of items to return, 25"
+				},
+				"search": {
+					"type": "String",
+					"description": "A string to search for, 'Thrones'"
+				},
+				"refresh": {
+					"type": "String",
+					"description": "'true' to refresh the media info table"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'draw': 1, 'recordsTotal': 82, 'recordsFiltered': 82, 'filtered_file_size': 2616760056742, 'total_file_size': 2616760056742, 'data': {{'added_at': '1403553078', 'audio_channels': '', 'audio_codec': '', 'bitrate': '', 'container': '', 'file_size': 253660175293, 'grandparent_rating_key': '', 'last_played': 1462380698, 'media_index': '1', 'media_type': 'show', 'parent_media_index': '', 'parent_rating_key': '', 'play_count': 15, 'rating_key': '1219', 'section_id': 2, 'section_type': 'show', 'sort_title': 'Game of Thrones', 'thumb': '/library/metadata/1219/thumb/1436265995', 'title': 'Game of Thrones', 'video_codec': '', 'video_framerate': '', 'video_resolution': '', 'year': '2011' }, {...}, {...} } }"
+			}
+		},
+		"get_library_names": {
+			"description": "Get a list of library sections and ids on the PMS.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "JSON",
+				"data": "{{'section_id': 1, 'section_name': 'Movies', 'section_type': 'movie'}, {'section_id': 7, 'section_name': 'Music', 'section_type': 'artist'}, {'section_id': 2, 'section_name': 'TV Shows', 'section_type': 'show'}, {...} }"
+			}
+		},
+		"get_library_user_stats": {
+			"description": "Get a library's user statistics.",
+			"required": {
+				"section_id": {
+					"type": "String",
+					"description": "The id of the Plex library section"
+				}
+			},
+			"optional": {
+				"grouping": {
+					"type": "Integer",
+					"description": "0 or 1"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{{'friendly_name': 'Jon Snow', 'total_plays': 170, 'total_time': 349618, 'user_id': 133788, 'user_thumb': 'https://plex.tv/users/k10w42309cynaopq/avatar', 'username': 'LordCommanderSnow' }, {'friendly_name': 'DanyKhaleesi69', 'total_plays': 42, 'total_time': 50185, 'user_id': 8008135, 'user_thumb': 'https://plex.tv/users/568gwwoib5t98a3a/avatar', 'username: 'DanyKhaleesi69' }, {...}, {...} }"
+			}
+		},
+		"get_library_watch_time_stats": {
+			"description": "Get a library's watch time statistics.",
+			"required": {
+				"section_id": {
+					"type": "String",
+					"description": "The id of the Plex library section"
+				}
+			},
+			"optional": {
+				"grouping": {
+					"type": "Integer",
+					"description": "0 or 1"
+				},
+				"query_days": {
+					"type": "String",
+					"description": "Comma separated days, e.g. '1,7,30,0'"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{{'query_days': 1, 'total_plays': 0, 'total_time': 0 }, {'query_days': 7, 'total_plays': 3, 'total_time': 15694 }, {'query_days': 30, 'total_plays': 35, 'total_time': 63054 }, {'query_days': 0, 'total_plays': 508, 'total_time': 1183080 } }"
+			}
+		},
+		"get_logs": {
+			"description": "Get the Tautulli logs.",
+			"required": "None",
+			"optional": {
+				"sort": {
+					"type": "String",
+					"description": "'time', 'thread', 'msg', 'loglevel'"
+				},
+				"search": {
+					"type": "String",
+					"description": "A string to search for"
+				},
+				"order": {
+					"type": "String",
+					"description": "'desc' or 'asc'"
+				},
+				"regex": {
+					"type": "String",
+					"description": "A regex string to search for"
+				},
+				"start": {
+					"type": "Integer",
+					"description": "Row number to start from"
+				},
+				"end": {
+					"type": "Integer",
+					"description": "Row number to end at"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{{'loglevel': 'DEBUG', 'msg': 'Latest version is 2d10b0748c7fa2ee4cf59960c3d3fffc6aa9512b', 'thread': 'MainThread', 'time': '2016-05-08 09:36:51 ' }, {...}, {...} }"
+			}
+		},
+		"get_metadata": {
+			"description": "Get the metadata for a media item.",
+			"required": {
+				"OR": {
+					"rating_key": {
+						"type": "String",
+						"description": "Rating key of the item"
+					},
+					"sync_id": {
+						"type": "String",
+						"description": "Sync ID of a synced item"
+					}
+				}
+			},
+			"optional": "None",
+			"returns": {
+				"type": "JSON",
+				"data": "{'actors': { 'Emilia Clarke', 'Lena Headey', 'Sophie Turner', 'Kit Harington', 'Peter Dinklage', 'Nikolaj Coster-Waldau', 'Maisie Williams', 'Iain Glen', 'John Bradley', 'Alfie Allen' }, 'added_at': '1461572396', 'art': '/library/metadata/1219/art/1462175063', 'audience_rating': '7.4', 'audience_rating_image': 'themoviedb://image.rating', 'banner': '/library/metadata/1219/banner/1462175063', 'collections': {}, 'content_rating': 'TV-MA', 'directors': { 'Jeremy Podeswa' }, 'duration': '2998290', 'full_title': 'Game of Thrones - The Red Woman', 'genres': { 'Action/Adventure', 'Drama', 'Fantasy', 'Romance' }, 'grandparent_guid': 'plex://show/5d9c086c46115600200aa2fe', 'grandparent_guids': { 'imdb://tt0944947', 'tmdb://1399', 'tvdb://121361' }, 'grandparent_rating_key': '1219', 'grandparent_thumb': '/library/metadata/1219/thumb/1462175063', 'grandparent_title': 'Game of Thrones', 'grandparent_year': '2011', 'guid': 'plex://episode/5d9c1276e9d5a1001f4ff2fa', 'guids': { 'imdb://tt3658014', 'tmdb://1156503', 'tvdb://5469015' }, 'labels': {}, 'last_viewed_at': '1462165717', 'library_name': 'TV Shows', 'live': 0, 'media_index': '1', 'media_info': { { 'aspect_ratio': '1.78', 'audio_channel_layout': '5.1', 'audio_channels': '6', 'audio_codec': 'ac3', 'audio_profile': '', 'bitrate': '10617', 'channel_call_sign': '', 'channel_identifier': '', 'channel_thumb': '', 'container': 'mkv', 'height': '1078', 'id': '257925', 'optimized_version': 0, 'parts': { { 'file': '/media/TV Shows/Game of Thrones/Season 06/Game of Thrones - S06E01 - The Red Woman.mkv', 'file_size': '3979115377', 'id': '274169', 'indexes': 1, 'streams': { { 'id': '511663', 'type': '1', 'video_bit_depth': '8', 'video_bitrate': '10233', 'video_codec': 'h264', 'video_codec_level': '41', 'video_color_primaries': '', 'video_color_range': 'tv', 'video_color_space': 'bt709', 'video_color_trc': '', 'video_dynamic_range': 'SDR', 'video_frame_rate': '23.976', 'video_height': '1078', 'video_language': '', 'video_language_code': '', 'video_profile': 'high', 'video_ref_frames': '4', 'video_scan_type': 'progressive', 'video_width': '1920', 'selected': 0 }, { 'audio_bitrate': '384', 'audio_bitrate_mode': '', 'audio_channel_layout': '5.1(side)', 'audio_channels': '6', 'audio_codec': 'ac3', 'audio_language': '', 'audio_language_code': '', 'audio_profile': '', 'audio_sample_rate': '48000', 'id': '511664', 'type': '2', 'selected': 1 }, { 'id': '511953', 'subtitle_codec': 'srt', 'subtitle_container': '', 'subtitle_forced': 0, 'subtitle_format': 'srt', 'subtitle_language': 'English', 'subtitle_language_code': 'eng', 'subtitle_location': 'external', 'type': '3', 'selected': 1 } } } }, 'video_codec': 'h264', 'video_framerate': '24p', 'video_full_resolution': '1080p', 'video_profile': 'high', 'video_resolution': '1080', 'width': '1920' } }, 'media_type': 'episode', 'original_title': '', 'originally_available_at': '2016-04-24', 'parent_guid': 'plex://season/602e67e61d3358002c4120f7', 'parent_guids': { 'tvdb://651357' }, 'parent_media_index': '6', 'parent_rating_key': '153036', 'parent_thumb': '/library/metadata/153036/thumb/1462175062', 'parent_title': 'Season 6', 'parent_year': '2016', 'rating': '', 'rating_image': '', 'rating_key': '153037', 'section_id': '2', 'sort_title': 'Red Woman', 'studio': 'Revolution Sun Studios', 'summary': 'The fate of Jon Snow is revealed. Daenerys meets a strong man. Cersei sees her daughter once again.', 'tagline': '', 'thumb': '/library/metadata/153037/thumb/1462175060', 'title': 'The Red Woman', 'user_rating': '9.0', 'updated_at': '1462175060', 'writers': { 'David Benioff', 'D. B. Weiss' }, 'year': '2016' }"
+			}
+		},
+		"get_new_rating_keys": {
+			"description": "Get a list of new rating keys for the PMS of all of the item's parent/children.",
+			"required": {
+				"rating_key": {
+					"type": "String",
+					"description": "'12345'"
+				},
+				"media_type": {
+					"type": "String",
+					"description": "'movie', 'show', 'season', 'episode', 'artist', 'album', 'track'"
+				}
+			},
+			"optional": "None",
+			"returns": {
+				"type": "JSON",
+				"data": "{}"
+			}
+		},
+		"get_newsletter_config": {
+			"description": "Get the configuration for an existing notification agent.",
+			"required": {
+				"newsletter_id": {
+					"type": "Integer",
+					"description": "The newsletter config to retrieve"
+				}
+			},
+			"optional": "None",
+			"returns": {
+				"type": "JSON",
+				"data": "{'id': 1, 'agent_id': 0, 'agent_name': 'recently_added', 'agent_label': 'Recently Added', 'friendly_name': '', 'id_name': '', 'cron': '0 0 * * 1', 'active': 1, 'subject': 'Recently Added to {server_name}! ({end_date})', 'body': 'View the newsletter here: {newsletter_url}', 'message': '', 'config': {'custom_cron': 0, 'filename': 'newsletter_{newsletter_uuid}.html', 'formatted': 1, 'incl_libraries': {'1', '2'}, 'notifier_id': 1, 'save_only': 0, 'time_frame': 7, 'time_frame_units': 'days' }, 'email_config': {...}, 'config_options': {{...} ...}, 'email_config_options': {{...} ...} }"
+			}
+		},
+		"get_newsletter_log": {
+			"description": "Get the data on the Tautulli newsletter logs table.",
+			"required": "None",
+			"optional": {
+				"order_column": {
+					"type": "String",
+					"description": "'timestamp', 'newsletter_id', 'agent_name', 'notify_action', 'subject_text', 'start_date', 'end_date', 'uuid'"
+				},
+				"order_dir": {
+					"type": "String",
+					"description": "'desc' or 'asc'"
+				},
+				"start": {
+					"type": "Integer",
+					"description": "Row to start from, 0"
+				},
+				"length": {
+					"type": "Integer",
+					"description": "Number of items to return, 25"
+				},
+				"search": {
+					"type": "String",
+					"description": "A string to search for, 'Telegram'"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'draw': 1, 'recordsTotal': 1039, 'recordsFiltered': 163, 'data': {{'agent_id': 0, 'agent_name': 'recently_added', 'end_date': '2018-03-18', 'id': 7, 'newsletter_id': 1, 'notify_action': 'on_cron', 'start_date': '2018-03-05', 'subject_text': 'Recently Added to Plex (Winterfell-Server)! (2018-03-18)', 'success': 1, 'timestamp': 1462253821, 'uuid': '7fe4g65i' }, {...}, {...} } }"
+			}
+		},
+		"get_newsletters": {
+			"description": "Get a list of configured newsletters.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "JSON",
+				"data": "{{'id': 1, 'agent_id': 0, 'agent_name': 'recently_added', 'agent_label': 'Recently Added', 'friendly_name': '', 'cron': '0 0 * * 1', 'active': 1 } }"
+			}
+		},
+		"get_notification_log": {
+			"description": "Get the data on the Tautulli notification logs table.",
+			"required": "None",
+			"optional": {
+				"order_column": {
+					"type": "String",
+					"description": "'timestamp', 'notifier_id', 'agent_name', 'notify_action', 'subject_text', 'body_text',"
+				},
+				"order_dir": {
+					"type": "String",
+					"description": "'desc' or 'asc'"
+				},
+				"start": {
+					"type": "Integer",
+					"description": "Row to start from, 0"
+				},
+				"length": {
+					"type": "Integer",
+					"description": "Number of items to return, 25"
+				},
+				"search": {
+					"type": "String",
+					"description": "A string to search for, 'Telegram'"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'draw': 1, 'recordsTotal': 1039, 'recordsFiltered': 163, 'data': {{'agent_id': 13, 'agent_name': 'telegram', 'body_text': 'DanyKhaleesi69 started playing The Red Woman.', 'id': 1000, 'notify_action': 'on_play', 'rating_key': 153037, 'session_key': 147, 'subject_text': 'Tautulli (Winterfell-Server)', 'success': 1, 'timestamp': 1462253821, 'user': 'DanyKhaleesi69', 'user_id': 8008135 }, {...}, {...} } }"
+			}
+		},
+		"get_notifier_config": {
+			"description": "Get the configuration for an existing notification agent.",
+			"required": {
+				"notifier_id": {
+					"type": "Integer",
+					"description": "The notifier config to retrieve"
+				}
+			},
+			"optional": "None",
+			"returns": {
+				"type": "JSON",
+				"data": "{'id': 1, 'agent_id': 13, 'agent_name': 'telegram', 'agent_label': 'Telegram', 'friendly_name': '', 'config': {'incl_poster': 0, 'html_support': 1, 'chat_id': '123456', 'bot_token': '13456789:fio9040NNo04jLEp-4S', 'incl_subject': 1, 'disable_web_preview': 0 }, 'config_options': {{...} ...} 'actions': {'on_play': 0, 'on_stop': 0 ... }, 'notify_text': {'on_play': {'subject': '...', 'body': '...' } 'on_stop': {'subject': '...', 'body': '...' } ... } }"
+			}
+		},
+		"get_notifier_parameters": {
+			"description": "Get the list of available notification parameters.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "JSON",
+				"data": "{ }"
+			}
+		},
+		"get_notifiers": {
+			"description": "Get a list of configured notifiers.",
+			"required": "None",
+			"optional": {
+				"notify_action": {
+					"type": "String",
+					"description": "The notification action to filter out"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{{'id': 1, 'agent_id': 13, 'agent_name': 'telegram', 'agent_label': 'Telegram', 'friendly_name': '', 'active': 1 } }"
+			}
+		},
+		"get_old_rating_keys": {
+			"description": "Get a list of old rating keys from the Tautulli database for all of the item's parent/children.",
+			"required": {
+				"rating_key": {
+					"type": "String",
+					"description": "'12345'"
+				},
+				"media_type": {
+					"type": "String",
+					"description": "'movie', 'show', 'season', 'episode', 'artist', 'album', 'track'"
+				}
+			},
+			"optional": "None",
+			"returns": {
+				"type": "JSON",
+				"data": "{}"
+			}
+		},
+		"get_playlists_table": {
+			"description": "Get the data on the Tautulli playlists tables.",
+			"required": {
+				"OR": {
+					"section_id": {
+						"type": "String",
+						"description": "The section id of the Plex library"
+					},
+					"user_id": {
+						"type": "String",
+						"description": "The user id of the Plex user"
+					}
+				}
+			},
+			"optional": "None",
+			"returns": {
+				"type": "JSON",
+				"data": "{'draw': 1, 'recordsTotal': 5, 'data': {...} }"
+			}
+		},
+		"get_plays_by_date": {
+			"description": "Get graph data by date.",
+			"required": "None",
+			"optional": {
+				"time_range": {
+					"type": "String",
+					"description": "The number of days of data to return"
+				},
+				"y_axis": {
+					"type": "String",
+					"description": "'plays' or 'duration'"
+				},
+				"user_id": {
+					"type": "String",
+					"description": "The user id to filter the data"
+				},
+				"grouping": {
+					"type": "Integer",
+					"description": "0 or 1"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'categories': {'YYYY-MM-DD', 'YYYY-MM-DD' ...} 'series': {{'name': 'Movies', 'data': {...}} {'name': 'TV', 'data': {...}}, {'name': 'Music', 'data': {...}}, {'name': 'Live TV', 'data': {...}} } }"
+			}
+		},
+		"get_plays_by_dayofweek": {
+			"description": "Get graph data by day of the week.",
+			"required": "None",
+			"optional": {
+				"time_range": {
+					"type": "String",
+					"description": "The number of days of data to return"
+				},
+				"y_axis": {
+					"type": "String",
+					"description": "'plays' or 'duration'"
+				},
+				"user_id": {
+					"type": "String",
+					"description": "The user id to filter the data"
+				},
+				"grouping": {
+					"type": "Integer",
+					"description": "0 or 1"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'categories': {'Sunday', 'Monday', 'Tuesday' ..., 'Saturday'} 'series': {{'name': 'Movies', 'data': {...}} {'name': 'TV', 'data': {...}}, {'name': 'Music', 'data': {...}}, {'name': 'Live TV', 'data': {...}} } }"
+			}
+		},
+		"get_plays_by_hourofday": {
+			"description": "Get graph data by hour of the day.",
+			"required": "None",
+			"optional": {
+				"time_range": {
+					"type": "String",
+					"description": "The number of days of data to return"
+				},
+				"y_axis": {
+					"type": "String",
+					"description": "'plays' or 'duration'"
+				},
+				"user_id": {
+					"type": "String",
+					"description": "The user id to filter the data"
+				},
+				"grouping": {
+					"type": "Integer",
+					"description": "0 or 1"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'categories': {'00', '01', '02' ..., '23'} 'series': {{'name': 'Movies', 'data': {...}} {'name': 'TV', 'data': {...}}, {'name': 'Music', 'data': {...}}, {'name': 'Live TV', 'data': {...}} } }"
+			}
+		},
+		"get_plays_by_source_resolution": {
+			"description": "Get graph data by source resolution.",
+			"required": "None",
+			"optional": {
+				"time_range": {
+					"type": "String",
+					"description": "The number of days of data to return"
+				},
+				"y_axis": {
+					"type": "String",
+					"description": "'plays' or 'duration'"
+				},
+				"user_id": {
+					"type": "String",
+					"description": "The user id to filter the data"
+				},
+				"grouping": {
+					"type": "Integer",
+					"description": "0 or 1"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'categories': {'720', '1080', 'sd' ...} 'series': {{'name': 'Direct Play', 'data': {...}} {'name': 'Direct Stream', 'data': {...}}, {'name': 'Transcode', 'data': {...}} } }"
+			}
+		},
+		"get_plays_by_stream_resolution": {
+			"description": "Get graph data by stream resolution.",
+			"required": "None",
+			"optional": {
+				"time_range": {
+					"type": "String",
+					"description": "The number of days of data to return"
+				},
+				"y_axis": {
+					"type": "String",
+					"description": "'plays' or 'duration'"
+				},
+				"user_id": {
+					"type": "String",
+					"description": "The user id to filter the data"
+				},
+				"grouping": {
+					"type": "Integer",
+					"description": "0 or 1"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'categories': {'720', '1080', 'sd' ...} 'series': {{'name': 'Direct Play', 'data': {...}} {'name': 'Direct Stream', 'data': {...}}, {'name': 'Transcode', 'data': {...}} } }"
+			}
+		},
+		"get_plays_by_stream_type": {
+			"description": "Get graph data by stream type by date.",
+			"required": "None",
+			"optional": {
+				"time_range": {
+					"type": "String",
+					"description": "The number of days of data to return"
+				},
+				"y_axis": {
+					"type": "String",
+					"description": "'plays' or 'duration'"
+				},
+				"user_id": {
+					"type": "String",
+					"description": "The user id to filter the data"
+				},
+				"grouping": {
+					"type": "Integer",
+					"description": "0 or 1"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'categories': {'YYYY-MM-DD', 'YYYY-MM-DD' ...} 'series': {{'name': 'Direct Play', 'data': {...}} {'name': 'Direct Stream', 'data': {...}}, {'name': 'Transcode', 'data': {...}} } }"
+			}
+		},
+		"get_plays_by_top_10_platforms": {
+			"description": "Get graph data by top 10 platforms.",
+			"required": "None",
+			"optional": {
+				"time_range": {
+					"type": "String",
+					"description": "The number of days of data to return"
+				},
+				"y_axis": {
+					"type": "String",
+					"description": "'plays' or 'duration'"
+				},
+				"user_id": {
+					"type": "String",
+					"description": "The user id to filter the data"
+				},
+				"grouping": {
+					"type": "Integer",
+					"description": "0 or 1"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'categories': {'iOS', 'Android', 'Chrome' ...} 'series': {{'name': 'Movies', 'data': {...}} {'name': 'TV', 'data': {...}}, {'name': 'Music', 'data': {...}}, {'name': 'Live TV', 'data': {...}} } }"
+			}
+		},
+		"get_plays_by_top_10_users": {
+			"description": "Get graph data by top 10 users.",
+			"required": "None",
+			"optional": {
+				"time_range": {
+					"type": "String",
+					"description": "The number of days of data to return"
+				},
+				"y_axis": {
+					"type": "String",
+					"description": "'plays' or 'duration'"
+				},
+				"user_id": {
+					"type": "String",
+					"description": "The user id to filter the data"
+				},
+				"grouping": {
+					"type": "Integer",
+					"description": "0 or 1"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'categories': {'Jon Snow', 'DanyKhaleesi69', 'A Girl' ...} 'series': {{'name': 'Movies', 'data': {...}} {'name': 'TV', 'data': {...}}, {'name': 'Music', 'data': {...}}, {'name': 'Live TV', 'data': {...}} } }"
+			}
+		},
+		"get_plays_per_month": {
+			"description": "Get graph data by month.",
+			"required": "None",
+			"optional": {
+				"time_range": {
+					"type": "String",
+					"description": "The number of months of data to return"
+				},
+				"y_axis": {
+					"type": "String",
+					"description": "'plays' or 'duration'"
+				},
+				"user_id": {
+					"type": "String",
+					"description": "The user id to filter the data"
+				},
+				"grouping": {
+					"type": "Integer",
+					"description": "0 or 1"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'categories': {'Jan 2016', 'Feb 2016', 'Mar 2016' ...} 'series': {{'name': 'Movies', 'data': {...}} {'name': 'TV', 'data': {...}}, {'name': 'Music', 'data': {...}}, {'name': 'Live TV', 'data': {...}} } }"
+			}
+		},
+		"get_plex_log": {
+			"description": "Get the PMS logs.",
+			"required": "None",
+			"optional": {
+				"window": {
+					"type": "Integer",
+					"description": "The number of tail lines to return"
+				},
+				"logfile": {
+					"type": "Integer",
+					"description": "The name of the Plex log file, e.g. 'Plex Media Server', 'Plex Media Scanner'"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{{'May 08, 2016 09:35:37', 'DEBUG', 'Auth: Came in with a super-token, authorization succeeded.' }, {...}, {...} }"
+			}
+		},
+		"get_pms_update": {
+			"description": "Check for updates to the Plex Media Server.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "JSON",
+				"data": "{'update_available': true, 'platform': 'Windows', 'release_date': '1473721409', 'version': '1.1.4.2757-24ffd60', 'requirements': '...', 'extra_info': '...', 'changelog_added': '...', 'changelog_fixed': '...', 'label': 'Download', 'distro': 'english', 'distro_build': 'windows-i386', 'download_url': 'https://downloads.plex.tv/...' }"
+			}
+		},
+		"get_recently_added": {
+			"description": "Get all items that where recently added to plex.",
+			"required": {
+				"count": {
+					"type": "String",
+					"description": "Number of items to return"
+				}
+			},
+			"optional": {
+				"start": {
+					"type": "String",
+					"description": "The item number to start at"
+				},
+				"media_type": {
+					"type": "String",
+					"description": "The media type: movie, show, artist"
+				},
+				"section_id": {
+					"type": "String",
+					"description": "The id of the Plex library section"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'recently_added': {{'actors': { 'Kit Harington', 'Emilia Clarke', 'Isaac Hempstead-Wright', 'Maisie Williams', 'Liam Cunningham' }, 'added_at': '1461572396', 'art': '/library/metadata/1219/art/1462175063', 'audience_rating': '8', 'audience_rating_image': 'rottentomatoes://image.rating.upright', 'banner': '/library/metadata/1219/banner/1462175063', 'directors': { 'Jeremy Podeswa' }, 'duration': '2998290', 'full_title': 'Game of Thrones - The Red Woman', 'genres': { 'Adventure', 'Drama', 'Fantasy' }, 'grandparent_rating_key': '1219', 'grandparent_thumb': '/library/metadata/1219/thumb/1462175063', 'grandparent_title': 'Game of Thrones', 'guid': 'com.plexapp.agents.thetvdb://121361/6/1?lang=en', 'guids': {}, 'labels': {}, 'last_viewed_at': '1462165717', 'library_name': 'TV Shows', 'media_index': '1', 'media_type': 'episode', 'original_title': '', 'originally_available_at': '2016-04-24', 'parent_media_index': '6', 'parent_rating_key': '153036', 'parent_thumb': '/library/metadata/153036/thumb/1462175062', 'parent_title': '', 'rating': '7.8', 'rating_image': 'rottentomatoes://image.rating.ripe', 'rating_key': '153037', 'section_id': '2', 'sort_title': 'Red Woman', 'studio': 'HBO', 'summary': 'Jon Snow is dead. Daenerys meets a strong man. Cersei sees her daughter again.', 'tagline': '', 'thumb': '/library/metadata/153037/thumb/1462175060', 'title': 'The Red Woman', 'user_rating': '9.0', 'updated_at': '1462175060', 'writers': { 'David Benioff', 'D. B. Weiss' }, 'year': '2016' }, {...}, {...} } }"
+			}
+		},
+		"get_server_friendly_name": {
+			"description": "Get the name of the PMS.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "String",
+				"data": "'Winterfell-Server'"
+			}
+		},
+		"get_server_id": {
+			"description": "Get the PMS server identifier.",
+			"required": {
+				"hostname": {
+					"type": "String",
+					"description": "'localhost' or '192.160.0.10'"
+				},
+				"port": {
+					"type": "Integer",
+					"description": "32400"
+				}
+			},
+			"optional": {
+				"ssl": {
+					"type": "Integer",
+					"description": "0 or 1"
+				},
+				"remote": {
+					"type": "Integer",
+					"description": "0 or 1"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'identifier': '08u2phnlkdshf890bhdlksghnljsahgleikjfg9t'}"
+			}
+		},
+		"get_server_identity": {
+			"description": "Get info about the local server.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "JSON",
+				"data": "{{'machine_identifier': 'ds48g4r354a8v9byrrtr697g3g79w', 'version': '0.9.15.x.xxx-xxxxxxx' } }"
+			}
+		},
+		"get_server_info": {
+			"description": "Get the PMS server information.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "JSON",
+				"data": "{'pms_identifier': '08u2phnlkdshf890bhdlksghnljsahgleikjfg9t', 'pms_ip': '10.10.10.1', 'pms_is_remote': 0, 'pms_name': 'Winterfell-Server', 'pms_platform': 'Windows', 'pms_plexpass': 1, 'pms_port': 32400, 'pms_ssl': 0, 'pms_url': 'http://10.10.10.1:32400', 'pms_url_manual': 0, 'pms_version': '1.20.0.3133-fede5bdc7' }"
+			}
+		},
+		"get_server_list": {
+			"description": "Get all your servers that are published to Plex.tv.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "JSON",
+				"data": "{{'clientIdentifier': 'ds48g4r354a8v9byrrtr697g3g79w', 'httpsRequired': '0', 'ip': 'xxx.xxx.xxx.xxx', 'label': 'Winterfell-Server', 'local': '1', 'port': '32400', 'value': 'xxx.xxx.xxx.xxx' }, {...}, {...} }"
+			}
+		},
+		"get_server_pref": {
+			"description": "Get a specified PMS server preference.",
+			"required": {
+				"pref": {
+					"type": "String",
+					"description": "Name of preference"
+				}
+			},
+			"returns": {
+				"type": "String",
+				"data": "Value of preference"
+			}
+		},
+		"get_servers_info": {
+			"description": "Get info about the PMS.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "JSON",
+				"data": "{{'port': '32400', 'host': '10.0.0.97', 'version': '0.9.15.2.1663-7efd046', 'name': 'Winterfell-Server', 'machine_identifier': 'ds48g4r354a8v9byrrtr697g3g79w' } }"
+			}
+		},
+		"get_settings": {
+			"description": "Gets all settings from the config file.",
+			"required": "None",
+			"optional": {
+				"key": {
+					"type": "String",
+					"description": "Name of a config section to return"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'General': {'api_enabled': true ...} 'Advanced': {'cache_sizemb': '32' ...} ... }"
+			}
+		},
+		"get_stream_data": {
+			"description": "Get the stream details from history or current stream.",
+			"required": {
+				"OR": {
+					"row_id": {
+						"type": "Integer",
+						"description": "The row ID number for the history item"
+					},
+					"session_key": {
+						"type": "Integer",
+						"description": "The session key of the current stream"
+					}
+				}
+			},
+			"optional": "None",
+			"returns": {
+				"type": "JSON",
+				"data": "{'aspect_ratio': '2.35', 'audio_bitrate': 231, 'audio_channels': 6, 'audio_language': 'English', 'audio_language_code': 'eng', 'audio_codec': 'aac', 'audio_decision': 'transcode', 'bitrate': 2731, 'container': 'mp4', 'current_session': '', 'grandparent_title': '', 'media_type': 'movie', 'optimized_version': '', 'optimized_version_profile': '', 'optimized_version_title': '', 'original_title': '', 'pre_tautulli': '', 'quality_profile': '1.5 Mbps 480p', 'stream_audio_bitrate': 203, 'stream_audio_channels': 2, 'stream_audio_language': 'English', 'stream_audio_language_code', 'eng', 'stream_audio_codec': 'aac', 'stream_audio_decision': 'transcode', 'stream_bitrate': 730, 'stream_container': 'mkv', 'stream_container_decision': 'transcode', 'stream_subtitle_codec': '', 'stream_subtitle_decision': '', 'stream_video_bitrate': 527, 'stream_video_codec': 'h264', 'stream_video_decision': 'transcode', 'stream_video_dynamic_range': 'SDR', 'stream_video_framerate': '24p', 'stream_video_height': 306, 'stream_video_resolution': 'SD', 'stream_video_width': 720, 'subtitle_codec': '', 'subtitles': '', 'synced_version': '', 'synced_version_profile': '', 'title': 'Frozen', 'transcode_hw_decoding': '', 'transcode_hw_encoding': '', 'video_bitrate': 2500, 'video_codec': 'h264', 'video_decision': 'transcode', 'video_dynamic_range': 'SDR', 'video_framerate': '24p', 'video_height': 816, 'video_resolution': '1080', 'video_width': 1920 }"
+			}
+		},
+		"get_stream_type_by_top_10_platforms": {
+			"description": "Get graph data by stream type by top 10 platforms.",
+			"required": "None",
+			"optional": {
+				"time_range": {
+					"type": "String",
+					"description": "The number of days of data to return"
+				},
+				"y_axis": {
+					"type": "String",
+					"description": "'plays' or 'duration'"
+				},
+				"user_id": {
+					"type": "String",
+					"description": "The user id to filter the data"
+				},
+				"grouping": {
+					"type": "Integer",
+					"description": "0 or 1"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'categories': {'iOS', 'Android', 'Chrome' ...} 'series': {{'name': 'Direct Play', 'data': {...}} {'name': 'Direct Stream', 'data': {...}}, {'name': 'Transcode', 'data': {...}} } }"
+			}
+		},
+		"get_stream_type_by_top_10_users": {
+			"description": "Get graph data by stream type by top 10 users.",
+			"required": "None",
+			"optional": {
+				"time_range": {
+					"type": "String",
+					"description": "The number of days of data to return"
+				},
+				"y_axis": {
+					"type": "String",
+					"description": "'plays' or 'duration'"
+				},
+				"user_id": {
+					"type": "String",
+					"description": "The user id to filter the data"
+				},
+				"grouping": {
+					"type": "Integer",
+					"description": "0 or 1"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'categories': {'Jon Snow', 'DanyKhaleesi69', 'A Girl' ...} 'series': {{'name': 'Direct Play', 'data': {...}} {'name': 'Direct Stream', 'data': {...}}, {'name': 'Transcode', 'data': {...}} } }"
+			}
+		},
+		"get_synced_items": {
+			"description": "Get a list of synced items on the PMS.",
+			"required": "None",
+			"optional": {
+				"machine_id": {
+					"type": "String",
+					"description": "The PMS identifier"
+				},
+				"user_id": {
+					"type": "String",
+					"description": "The id of the Plex user"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{{'audio_bitrate': '192', 'client_id': '95434se643fsf24f-com-plexapp-android', 'content_type': 'video', 'device_name': 'Tyrion's iPad', 'failure': '', 'item_complete_count': '1', 'item_count': '1', 'item_downloaded_count': '1', 'item_downloaded_percent_complete': 100, 'metadata_type': 'movie', 'photo_quality': '74', 'platform': 'iOS', 'rating_key': '154092', 'root_title': 'Movies', 'state': 'complete', 'sync_id': '11617019', 'sync_media_type': null, 'sync_title': 'Deadpool', 'total_size': '560718134', 'user': 'DrukenDwarfMan', 'user_id': '696969', 'username': 'DrukenDwarfMan', 'video_bitrate': '4000' 'video_quality': '100' }, {...}, {...} }"
+			}
+		},
+		"get_tautulli_info": {
+			"description": "Get info about the Tautulli server.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "JSON",
+				"data": "{'tautulli_install_type': 'git', 'tautulli_version': 'v2.8.1', 'tautulli_branch': 'master', 'tautulli_commit': '2410eb33805aaac4bd1c5dad0f71e4f15afaf742', 'tautulli_platform': 'Windows', 'tautulli_platform_release': '10', 'tautulli_platform_version': '10.0.19043', 'tautulli_platform_linux_distro': '', 'tautulli_platform_device_name': 'Winterfell-Server', 'tautulli_python_version': '3.10.0' }"
+			}
+		},
+		"get_user": {
+			"description": "Get a user's details.",
+			"required": {
+				"user_id": {
+					"type": "String",
+					"description": "The id of the Plex user"
+				}
+			},
+			"optional": {
+				"include_last_seen": {
+					"type": "Boolean",
+					"description": "True to include the last_seen value for the user."
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'allow_guest': 1, 'deleted_user': 0, 'do_notify': 1, 'email': 'Jon.Snow.1337@CastleBlack.com', 'friendly_name': 'Jon Snow', 'is_active': 1, 'is_admin': 0, 'is_allow_sync': 1, 'is_home_user': 1, 'is_restricted': 0, 'keep_history': 1, 'last_seen': 1462591869, 'row_id': 1, 'shared_libraries': {'10', '1', '4', '5', '15', '20', '2'}, 'user_id': 133788, 'user_thumb': 'https://plex.tv/users/k10w42309cynaopq/avatar', 'username': 'LordCommanderSnow' }"
+			}
+		},
+		"get_user_ips": {
+			"description": "Get the data on Tautulli users IP table.",
+			"required": {
+				"user_id": {
+					"type": "String",
+					"description": "The id of the Plex user"
+				}
+			},
+			"optional": {
+				"order_column": {
+					"type": "String",
+					"description": "'last_seen', 'first_seen', 'ip_address', 'platform', 'player', 'last_played', 'play_count'"
+				},
+				"order_dir": {
+					"type": "String",
+					"description": "'desc' or 'asc'"
+				},
+				"start": {
+					"type": "Integer",
+					"description": "Row to start from, 0"
+				},
+				"length": {
+					"type": "Integer",
+					"description": "Number of items to return, 25"
+				},
+				"search": {
+					"type": "String",
+					"description": "A string to search for, 'xxx.xxx.xxx.xxx'"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'draw': 1, 'recordsTotal': 2344, 'recordsFiltered': 10, 'data': {{'friendly_name': 'Jon Snow', 'guid': 'com.plexapp.agents.thetvdb://121361/6/1?lang=en', 'id': 1121, 'ip_address': 'xxx.xxx.xxx.xxx', 'last_played': 'Game of Thrones - The Red Woman', 'last_seen': 1462591869, 'first_seen': 1583968210, 'live': 0, 'media_index': 1, 'media_type': 'episode', 'originally_available_at': '2016-04-24', 'parent_media_index': 6, 'parent_title': '', 'platform': 'Chrome', 'play_count': 149, 'player': 'Plex Web (Chrome)', 'rating_key': 153037, 'thumb': '/library/metadata/153036/thumb/1462175062', 'transcode_decision': 'transcode', 'user_id': 133788, 'year': 2016 }, {...}, {...} } }"
+			}
+		},
+		"get_user_logins": {
+			"description": "Get the data on Tautulli user login table.",
+			"required": {
+				"user_id": {
+					"type": "String",
+					"description": "The id of the Plex user"
+				}
+			},
+			"optional": {
+				"order_column": {
+					"type": "String",
+					"description": "'date', 'time', 'ip_address', 'host', 'os', 'browser'"
+				},
+				"order_dir": {
+					"type": "String",
+					"description": "'desc' or 'asc'"
+				},
+				"start": {
+					"type": "Integer",
+					"description": "Row to start from, 0"
+				},
+				"length": {
+					"type": "Integer",
+					"description": "Number of items to return, 25"
+				},
+				"search": {
+					"type": "String",
+					"description": "A string to search for, 'xxx.xxx.xxx.xxx'"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'draw': 1, 'recordsTotal': 2344, 'recordsFiltered': 10, 'data': {{'browser': 'Safari 7.0.3', 'current': false, 'expiry': '2021-06-30 18:48:03', 'friendly_name': 'Jon Snow', 'host': 'http://plexpy.castleblack.com', 'ip_address': 'xxx.xxx.xxx.xxx', 'os': 'Mac OS X', 'row_id': 1, 'timestamp': 1462591869, 'user': 'LordCommanderSnow', 'user_agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0.3 Safari/7046A194A', 'user_group': 'guest', 'user_id': 133788 }, {...}, {...} } }"
+			}
+		},
+		"get_user_names": {
+			"description": "Get a list of all user and user ids.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "JSON",
+				"data": "{{'friendly_name': 'Jon Snow', 'user_id': 133788}, {'friendly_name': 'DanyKhaleesi69', 'user_id': 8008135}, {'friendly_name': 'Tyrion Lannister', 'user_id': 696969}, {...} }"
+			}
+		},
+		"get_user_player_stats": {
+			"description": "Get a user's player statistics.",
+			"required": {
+				"user_id": {
+					"type": "String",
+					"description": "The id of the Plex user"
+				}
+			},
+			"optional": {
+				"grouping": {
+					"type": "Integer",
+					"description": "0 or 1"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{{'platform': 'Chrome', 'platform_name': 'chrome', 'player_name': 'Plex Web (Chrome)', 'result_id': 1, 'total_plays': 170, 'total_time': 349618 }, {'platform': 'Chromecast', 'platform_name': 'chromecast', 'player_name': 'Chromecast', 'result_id': 2, 'total_plays': 42, 'total_time': 50185 }, {...}, {...} }"
+			}
+		},
+		"get_user_watch_time_stats": {
+			"description": "Get a user's watch time statistics.",
+			"required": {
+				"user_id": {
+					"type": "String",
+					"description": "The id of the Plex user"
+				}
+			},
+			"optional": {
+				"grouping": {
+					"type": "Integer",
+					"description": "0 or 1"
+				},
+				"query_days": {
+					"type": "String",
+					"description": "Comma separated days, e.g. '1,7,30,0'"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{{'query_days': 1, 'total_plays': 0, 'total_time': 0 }, {'query_days': 7, 'total_plays': 3, 'total_time': 15694 }, {'query_days': 30, 'total_plays': 35, 'total_time': 63054 }, {'query_days': 0, 'total_plays': 508, 'total_time': 1183080 } }"
+			}
+		},
+		"get_users": {
+			"description": "Get a list of all users that have access to your server.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "JSON",
+				"data": "{{'allow_guest': 1, 'do_notify': 1, 'email': 'Jon.Snow.1337@CastleBlack.com', 'filter_all': '', 'filter_movies': '', 'filter_music': '', 'filter_photos': '', 'filter_tv': '', 'is_active': 1, 'is_admin': 0, 'is_allow_sync': 1, 'is_home_user': 1, 'is_restricted': 0, 'keep_history': 1, 'row_id': 1, 'shared_libraries': {'1', '2', '3'}, 'thumb': 'https://plex.tv/users/k10w42309cynaopq/avatar', 'user_id': '133788', 'username': 'Jon Snow' }, {...}, {...} }"
+			}
+		},
+		"get_users_table": {
+			"description": "Get the data on Tautulli users table.",
+			"required": "None",
+			"optional": {
+				"grouping": {
+					"type": "Integer",
+					"description": "0 or 1"
+				},
+				"order_column": {
+					"type": "String",
+					"description": "'user_thumb', 'friendly_name', 'last_seen', 'ip_address', 'platform', 'player', 'last_played', 'plays', 'duration'"
+				},
+				"order_dir": {
+					"type": "String",
+					"description": "'desc' or 'asc'"
+				},
+				"start": {
+					"type": "Integer",
+					"description": "Row to start from, 0"
+				},
+				"length": {
+					"type": "Integer",
+					"description": "Number of items to return, 25"
+				},
+				"search": {
+					"type": "String",
+					"description": "A string to search for, 'Jon Snow'"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'draw': 1, 'recordsTotal': 10, 'recordsFiltered': 10, 'data': {{'allow_guest': 1, 'do_notify': 1, 'duration': 2998290, 'email': 'Jon.Snow.1337@CastleBlack.com', 'friendly_name': 'Jon Snow', 'guid': 'com.plexapp.agents.thetvdb://121361/6/1?lang=en', 'history_row_id': 1121, 'ip_address': 'xxx.xxx.xxx.xxx', 'is_active': 1, 'keep_history': 1, 'last_played': 'Game of Thrones - The Red Woman', 'last_seen': 1462591869, 'live': 0, 'media_index': 1, 'media_type': 'episode', 'originally_available_at': '2016-04-24', 'parent_media_index': 6, 'parent_title': '', 'platform': 'Chrome', 'player': 'Plex Web (Chrome)', 'plays': 487, 'rating_key': 153037, 'row_id': 1, 'thumb': '/library/metadata/153036/thumb/1462175062', 'title': 'Jon Snow', 'transcode_decision': 'transcode', 'user_id': 133788, 'user_thumb': 'https://plex.tv/users/568gwwoib5t98a3a/avatar', 'username': 'LordCommanderSnow', 'year': 2016 }, {...}, {...} } }"
+			}
+		},
+		"get_whois_lookup": {
+			"description": "Get the connection info for an IP address.",
+			"required": {
+				"ip_address": {
+					"type": "String",
+					"description": "IP Address"
+				}
+			},
+			"optional": "None",
+			"returns": {
+				"type": "JSON",
+				"data": "{'host': 'google-public-dns-a.google.com', 'nets': {{'description': 'Google Inc.', 'address': '1600 Amphitheatre Parkway', 'city': 'Mountain View', 'state': 'CA', 'postal_code': '94043', 'country': 'United States' ... }, {...} } json: {'host': 'Not available', 'nets': {}, 'error': 'IPv4 address 127.0.0.1 is already defined as Loopback via RFC 1122, Section 3.2.1.3.' }"
+			}
+		},
+		"import_config": {
+			"description": "Import a Tautulli config file.",
+			"required": {
+				"OR": {
+					"config_file": {
+						"type": "file",
+						"description": "The config file to import (multipart/form-data)"
+					},
+					"config_path": {
+						"type": "String",
+						"description": "The full path to the config file to import"
+					}
+				}
+			},
+			"optional": {
+				"backup": {
+					"type": "Boolean",
+					"description": "true or false whether to backup the current config before importing"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'result': 'success', 'message': 'Config import has started. Check the logs to monitor any problems. ' 'Tautulli will restart automatically.' }"
+			}
+		},
+		"import_database": {
+			"description": "Import a Tautulli, PlexWatch, or Plexivity database into Tautulli.",
+			"required": {
+				"app": {
+					"type": "String",
+					"description": "'tautulli' or 'plexwatch' or 'plexivity' database_file (file): The database file to import (multipart/form-data) or"
+				},
+				"database_path": {
+					"type": "String",
+					"description": "The full path to the database file to import"
+				},
+				"method": {
+					"type": "String",
+					"description": "For Tautulli only, 'merge' or 'overwrite'"
+				},
+				"table_name": {
+					"type": "String",
+					"description": "For PlexWatch or Plexivity only, 'processed' or 'grouped'"
+				}
+			},
+			"optional": {
+				"backup": {
+					"type": "Boolean",
+					"description": "For Tautulli only, true or false whether to backup the current database before importing"
+				},
+				"import_ignore_interval": {
+					"type": "Integer",
+					"description": "For PlexWatch or Plexivity only, the minimum number of seconds for a stream to import"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'result': 'success', 'message': 'Database import has started. Check the logs to monitor any problems.' }"
+			}
+		},
+		"logout_user_session": {
+			"description": "Logout Tautulli user sessions.",
+			"required": {
+				"row_ids": {
+					"type": "String",
+					"description": "Comma separated row ids to sign out, e.g. '2,3,8'"
+				}
+			},
+			"optional": "None",
+			"returns": {
+				"type": "None",
+				"data": "None"
+			}
+		},
+		"notify": {
+			"description": "Send a notification using Tautulli.",
+			"required": {
+				"notifier_id": {
+					"type": "Integer",
+					"description": "The ID number of the notification agent"
+				},
+				"subject": {
+					"type": "String",
+					"description": "The subject of the message"
+				},
+				"body": {
+					"type": "String",
+					"description": "The body of the message"
+				}
+			},
+			"optional": {
+				"headers": {
+					"type": "String",
+					"description": "The JSON headers for webhook notifications"
+				},
+				"script_args": {
+					"type": "String",
+					"description": "The arguments for script notifications"
+				}
+			},
+			"returns": {
+				"type": "None",
+				"data": "None"
+			}
+		},
+		"notify_newsletter": {
+			"description": "Send a newsletter using Tautulli.",
+			"required": {
+				"newsletter_id": {
+					"type": "Integer",
+					"description": "The ID number of the newsletter agent"
+				}
+			},
+			"optional": {
+				"subject": {
+					"type": "String",
+					"description": "The subject of the newsletter"
+				},
+				"body": {
+					"type": "String",
+					"description": "The body of the newsletter"
+				},
+				"message": {
+					"type": "String",
+					"description": "The message of the newsletter"
+				}
+			},
+			"returns": {
+				"type": "None",
+				"data": "None"
+			}
+		},
+		"notify_recently_added": {
+			"description": "Send a recently added notification using Tautulli.",
+			"required": {
+				"rating_key": {
+					"type": "Integer",
+					"description": "The rating key for the media"
+				}
+			},
+			"optional": {
+				"notifier_id": {
+					"type": "Integer",
+					"description": "The ID number of the notification agent. The notification will send to all enabled notification agents if notifier id is not provided."
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'result': 'success', 'message': 'Notification queued.' }"
+			}
+		},
+		"pms_image_proxy": {
+			"description": "Gets an image from the PMS and saves it to the image cache directory.",
+			"required": {
+				"img": {
+					"type": "String",
+					"description": "/library/metadata/153037/thumb/1462175060 or"
+				},
+				"rating_key": {
+					"type": "String",
+					"description": "54321"
+				}
+			},
+			"optional": {
+				"width": {
+					"type": "String",
+					"description": "300"
+				},
+				"height": {
+					"type": "String",
+					"description": "450"
+				},
+				"opacity": {
+					"type": "String",
+					"description": "25"
+				},
+				"background": {
+					"type": "String",
+					"description": "Hex color, e.g. 282828"
+				},
+				"blur": {
+					"type": "String",
+					"description": "3"
+				},
+				"img_format": {
+					"type": "String",
+					"description": "png"
+				},
+				"fallback": {
+					"type": "String",
+					"description": "'poster', 'cover', 'art', 'poster-live', 'art-live', 'art-live-full', 'user'"
+				},
+				"refresh": {
+					"type": "Boolean",
+					"description": "True or False whether to refresh the image cache"
+				},
+				"return_hash": {
+					"type": "Boolean",
+					"description": "True or False to return the self-hosted image hash instead of the image"
+				}
+			},
+			"returns": {
+				"type": "None",
+				"data": "None"
+			}
+		},
+		"refresh_libraries_list": {
+			"description": "Refresh the Tautulli libraries list.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "Unknown",
+				"data": "Unknown"
+			}
+		},
+		"refresh_users_list": {
+			"description": "Refresh the Tautulli users list.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "Unknown",
+				"data": "Unknown"
+			}
+		},
+		"register_device": {
+			"description": "Registers the Tautulli Remote App.",
+			"required": {
+				"device_id": {
+					"type": "String",
+					"description": "The unique device identifier for the mobile device"
+				},
+				"device_name": {
+					"type": "String",
+					"description": "The device name of the mobile device"
+				}
+			},
+			"optional": {
+				"platform": {
+					"type": "String",
+					"description": "The platform of the mobile devices"
+				},
+				"version": {
+					"type": "String",
+					"description": "The version of the app"
+				},
+				"friendly_name": {
+					"type": "String",
+					"description": "A friendly name to identify the mobile device"
+				},
+				"onesignal_id": {
+					"type": "String",
+					"description": "The OneSignal id for the mobile device"
+				},
+				"min_version": {
+					"type": "String",
+					"description": "The minimum Tautulli version supported by the mobile device, e.g. v2.5.6"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'pms_identifier': '08u2phnlkdshf890bhdlksghnljsahgleikjfg9t', 'pms_ip': '10.10.10.1', 'pms_is_remote': 0, 'pms_name': 'Winterfell-Server', 'pms_platform': 'Windows', 'pms_plexpass': 1, 'pms_port': 32400, 'pms_ssl': 0, 'pms_url': 'http://10.10.10.1:32400', 'pms_url_manual': 0, 'pms_version': '1.20.0.3133-fede5bdc7' 'server_id': '2ce060c87958445d8399a7a0c5663755', 'tautulli_install_type': 'git', 'tautulli_branch': 'master', 'tautulli_commit': '14b98a32e085d969f010f0249c3d2f660db50880', 'tautulli_platform': 'Windows', 'tautulli_platform_device_name': 'Winterfell-PC', 'tautulli_platform_linux_distro': '', 'tautulli_platform_release': '10', 'tautulli_platform_version': '10.0.18362', 'tautulli_python_version': '3.8.3' 'tautulli_version': 'v2.5.6' }"
+			}
+		},
+		"restart": {
+			"description": "Restart Tautulli.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "Unknown",
+				"data": "Unknown"
+			}
+		},
+		"search": {
+			"description": "Get search results from the PMS.",
+			"required": {
+				"query": {
+					"type": "String",
+					"description": "The query string to search for"
+				}
+			},
+			"optional": {
+				"limit": {
+					"type": "Integer",
+					"description": "The maximum number of items to return per media type"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'results_count': 69, 'results_list': {'movie': {{...}, {...} } }, {'episode': {{...}, {...} } }, {...} }"
+			}
+		},
+		"server_status": {
+			"description": "Get the current status of Tautulli's connection to the Plex server.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "JSON",
+				"data": "{'result': 'success', 'connected': true }"
+			}
+		},
+		"set_mobile_device_config": {
+			"description": "Configure an existing notification agent.",
+			"required": {
+				"mobile_device_id": {
+					"type": "Integer",
+					"description": "The mobile device config to update"
+				}
+			},
+			"optional": {
+				"friendly_name": {
+					"type": "String",
+					"description": "A friendly name to identify the mobile device"
+				}
+			},
+			"returns": {
+				"type": "None",
+				"data": "None"
+			}
+		},
+		"set_newsletter_config": {
+			"description": "Configure an existing newsletter agent.",
+			"required": {
+				"newsletter_id": {
+					"type": "Integer",
+					"description": "The newsletter config to update"
+				},
+				"agent_id": {
+					"type": "Integer",
+					"description": "The newsletter type of the newsletter"
+				}
+			},
+			"optional": "None",
+			"returns": {
+				"type": "None",
+				"data": "None"
+			}
+		},
+		"set_notifier_config": {
+			"description": "Configure an existing notification agent.",
+			"required": {
+				"notifier_id": {
+					"type": "Integer",
+					"description": "The notifier config to update"
+				},
+				"agent_id": {
+					"type": "Integer",
+					"description": "The agent of the notifier"
+				}
+			},
+			"optional": {
+				"notify_actions": {
+					"type": "Integer",
+					"description": "0 or 1, e.g. on_play, on_stop, etc."
+				},
+				"notify_text": {
+					"type": "String",
+					"description": "e.g. on_play_subject, on_play_body, etc."
+				}
+			},
+			"returns": {
+				"type": "None",
+				"data": "None"
+			}
+		},
+		"status": {
+			"description": "Get the current status of Tautulli.",
+			"required": "None",
+			"optional": {
+				"check": {
+					"type": "String",
+					"description": "database"
+				}
+			},
+			"returns": {
+				"type": "JSON",
+				"data": "{'result': 'success', 'message': 'Ok' }"
+			}
+		},
+		"terminate_session": {
+			"description": "Stop a streaming session.",
+			"required": {
+				"OR": {
+					"session_key": {
+						"type": "Integer",
+						"description": "The session key of the session to terminate"
+					},
+					"session_id": {
+						"type": "String",
+						"description": "The session id of the session to terminate"
+					}
+				}
+			},
+			"optional": {
+				"message": {
+					"type": "String",
+					"description": "A custom message to send to the client"
+				}
+			},
+			"returns": {
+				"type": "None",
+				"data": "None"
+			}
+		},
+		"undelete_library": {
+			"description": "Restore a deleted library section to Tautulli.",
+			"required": {
+				"section_id": {
+					"type": "String",
+					"description": "The id of the Plex library section"
+				},
+				"section_name": {
+					"type": "String",
+					"description": "The name of the Plex library section"
+				}
+			},
+			"optional": "None",
+			"returns": {
+				"type": "None",
+				"data": "None"
+			}
+		},
+		"undelete_user": {
+			"description": "Restore a deleted user to Tautulli.",
+			"required": {
+				"user_id": {
+					"type": "String",
+					"description": "The id of the Plex user"
+				},
+				"username": {
+					"type": "String",
+					"description": "The username of the Plex user"
+				}
+			},
+			"optional": "None",
+			"returns": {
+				"type": "None",
+				"data": "None"
+			}
+		},
+		"update": {
+			"description": "Update Tautulli.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "Unknown",
+				"data": "Unknown"
+			}
+		},
+		"update_check": {
+			"description": "Check for Tautulli updates.",
+			"required": "None",
+			"optional": "None",
+			"returns": {
+				"type": "JSON",
+				"data": "{'result': 'success', 'update': true, 'message': 'An update for Tautulli is available.' }"
+			}
+		},
+		"update_metadata_details": {
+			"description": "Update the metadata in the Tautulli database by matching rating keys. Also updates all parents or children of the media item if it is a show/season/episode or artist/album/track.",
+			"required": {
+				"old_rating_key": {
+					"type": "String",
+					"description": "12345"
+				},
+				"new_rating_key": {
+					"type": "String",
+					"description": "54321"
+				},
+				"media_type": {
+					"type": "String",
+					"description": "'movie', 'show', 'season', 'episode', 'artist', 'album', 'track'"
+				}
+			},
+			"optional": "None",
+			"returns": {
+				"type": "None",
+				"data": "None"
+			}
+		}
+	}
+}
